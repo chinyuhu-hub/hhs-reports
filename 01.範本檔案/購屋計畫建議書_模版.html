@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>購屋計畫建議書｜永慶不動產 樹林溪洲店</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: #f0eeeb;
+      color: #2c2c2c;
+      line-height: 1.75;
+    }
+
+    /* ── Design Tokens ── */
+    :root {
+      --red:        #C8102E;   /* 永慶品牌紅 */
+      --dark:       #2c2c2c;   /* 主文字 */
+      --warm-gray:  #6b6560;   /* 次文字 */
+      --gold:       #b8936a;   /* 暖金點綴（對應網站金色） */
+      --bg:         #ffffff;
+      --bg-warm:    #faf8f5;   /* 暖白底 */
+      --bg-section: #f5f2ee;   /* 淺暖底 */
+      --border:     #e2ddd8;
+      --border-light: #ede9e4;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg);
+      box-shadow: 0 4px 40px rgba(0,0,0,0.10);
+      overflow: hidden;
+    }
+
+    /* ══════════════════════════
+       頁眉 — 精簡白底
+    ══════════════════════════ */
+    .header {
+      background: var(--bg);
+      padding: 18px 52px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .logo-wrap img {
+      height: 36px;
+      width: auto;
+    }
+    .header-right {
+      text-align: right;
+    }
+    .header-right .doc-eyebrow {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      color: var(--warm-gray);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .header-right .doc-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #521506;
+      letter-spacing: 2px;
+    }
+
+    /* 品牌紅線（細，精緻感） */
+    .red-line {
+      height: 3px;
+      background: var(--red);
+      width: 100%;
+    }
+
+    /* ══════════════════════════
+       封面 — 紅底英雄 + 奶油底 meta
+    ══════════════════════════ */
+    .cover {
+      background: #521506; color: #fff;
+      padding: 0;
+      position: relative; overflow: hidden;
+    }
+    .cover-hero {
+      padding: 80px 52px 72px;
+      position: relative;
+    }
+    .cover-hero::after {
+      content: ''; position: absolute;
+      right: -80px; bottom: -80px;
+      width: 360px; height: 360px;
+      border: none; border-radius: 50%; pointer-events: none;
+      background: conic-gradient(
+        from 0deg,
+        rgba(255,255,255,0.40) 0%,
+        rgba(255,255,255,0.03) 35%,
+        rgba(255,255,255,0.28) 55%,
+        rgba(255,255,255,0.02) 80%,
+        rgba(255,255,255,0.40) 100%
+      );
+      -webkit-mask: radial-gradient(circle, transparent 55%, #000 56%, #000 100%);
+      mask: radial-gradient(circle, transparent 55%, #000 56%, #000 100%);
+      animation: ring-spin 18s linear infinite;
+    }
+    .cover-hero::before {
+      content: ''; position: absolute;
+      right: 80px; top: -40px;
+      width: 180px; height: 180px;
+      border: none; border-radius: 50%; pointer-events: none;
+      background: conic-gradient(
+        from 120deg,
+        rgba(255,255,255,0.35) 0%,
+        rgba(255,255,255,0.02) 30%,
+        rgba(255,255,255,0.22) 60%,
+        rgba(255,255,255,0.01) 85%,
+        rgba(255,255,255,0.35) 100%
+      );
+      -webkit-mask: radial-gradient(circle, transparent 50%, #000 52%, #000 100%);
+      mask: radial-gradient(circle, transparent 50%, #000 52%, #000 100%);
+      animation: ring-spin 12s linear infinite reverse;
+    }
+    @keyframes ring-spin {
+      to { transform: rotate(360deg); }
+    }
+    .cover-bottom {
+      background: var(--bg-warm); color: #3D3935;
+      padding: 32px 52px 36px;
+      position: relative;
+    }
+    .cover-bottom::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      height: 2px;
+      width: 100%;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: line-expand 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+    }
+    @keyframes line-expand {
+      to { transform: scaleX(1); }
+    }
+    .cover-eyebrow {
+      font-size: 12px;
+      letter-spacing: 5px;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 18px;
+      background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.7) 0%,
+        rgba(255,255,255,0.7) 40%,
+        rgba(255,255,255,1) 50%,
+        rgba(255,255,255,0.7) 60%,
+        rgba(255,255,255,0.7) 100%
+      );
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%, 100% { background-position: 100% 0; }
+      50% { background-position: -100% 0; }
+    }
+    .cover-title {
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 6px;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .cover-subtitle {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 1.5px;
+      margin-bottom: 0;
+    }
+    .cover-meta {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .cover-meta-item {
+      position: relative;
+      padding-left: 20px;
+    }
+    .cover-meta-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 2px; bottom: 2px;
+      width: 1px;
+      background: var(--border);
+    }
+    .cover-meta-item:first-child { padding-left: 0; }
+    .cover-meta-item:first-child::before { display: none; }
+    .cover-meta-item label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--warm-gray);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .cover-meta-item span {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #3D3935;
+    }
+
+    /* ══════════════════════════
+       Section 通用
+    ══════════════════════════ */
+    section {
+      padding: 56px 52px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border-light);
+    }
+    section:last-of-type { border-bottom: none; padding-bottom: 72px; }
+    section:nth-of-type(even) { background: var(--bg-warm); }
+
+    .section-head {
+      margin-bottom: 36px;
+    }
+    .section-eyebrow {
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--red);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--dark);
+      letter-spacing: 3px;
+    }
+    .section-rule {
+      width: 40px;
+      height: 2.5px;
+      background: var(--gold);
+      margin-top: 10px;
+    }
+
+    /* 內容密集段落分隔線 */
+
+    /* ══════════════════════════
+       需求摘要
+    ══════════════════════════ */
+    .need-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      background: transparent;
+      border: none;
+      margin-bottom: 32px;
+    }
+    .need-item {
+      background: #fff;
+      padding: 22px 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .need-item:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .need-item .n-label {
+      font-size: 16px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .need-item .n-value {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--dark);
+      letter-spacing: 0.5px;
+    }
+    .need-item .n-note {
+      font-size: 13px;
+      color: var(--warm-gray);
+      margin-top: 3px;
+    }
+
+    /* 優先條件 */
+    .priority-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--warm-gray);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .priority-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ptag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      border-radius: 2px;
+    }
+    .ptag.must {
+      background: var(--red);
+      color: #fff;
+    }
+    .ptag.want {
+      background: #f5f0e8;
+      color: var(--dark);
+      border: 1px solid #ddd4c0;
+    }
+    .ptag.nice {
+      background: var(--bg-section);
+      color: var(--warm-gray);
+      border: 1px solid var(--border);
+    }
+    .ptag .dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: 0.5; }
+
+    /* ══════════════════════════
+       預算
+    ══════════════════════════ */
+    .budget-hero-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      padding: 28px 28px 20px;
+      margin-bottom: 24px;
+    }
+    .budget-hero-card .budget-row.total { border-bottom: none; padding-bottom: 0; }
+    .budget-rows { margin-bottom: 28px; }
+    .budget-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .budget-row:last-child { border-bottom: none; }
+    .budget-row .b-name { font-size: 15px; color: var(--warm-gray); }
+    .budget-row .b-val  { font-size: 18px; font-weight: 600; color: var(--dark); }
+    .budget-row.total .b-name { font-size: 16px; font-weight: 600; color: var(--dark); }
+    .budget-row.total .b-val  { font-size: 48px; font-weight: 700; color: var(--red); letter-spacing: -1px; line-height: 1.1; }
+
+    .bar-group { margin-bottom: 14px; }
+    .bar-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--warm-gray);
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .bar-track {
+      height: 6px;
+      background: var(--border-light);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--red);
+    }
+    .budget-note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--warm-gray);
+      padding: 14px 20px;
+      background: var(--bg-section);
+      border-left: 2px solid var(--gold);
+      letter-spacing: 0.3px;
+      line-height: 1.8;
+    }
+
+    /* ══════════════════════════
+       物件卡
+    ══════════════════════════ */
+    .prop-cards { display: flex; flex-direction: column; gap: 1px; background: var(--border-light); border: 1px solid var(--border-light); }
+
+    .prop-card { background: var(--bg); }
+    .prop-card:nth-child(even) { background: var(--bg-warm); }
+
+    .prop-card-inner { padding: 28px 28px 24px; }
+
+    .prop-card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .prop-no   { font-size: 10px; letter-spacing: 2px; color: var(--warm-gray); text-transform: uppercase; margin-bottom: 4px; }
+    .prop-name { font-size: 16px; font-weight: 600; color: var(--dark); letter-spacing: 0.5px; }
+
+    .prop-badge {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 2px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+    .prop-badge.top  { background: var(--red);   color: #fff; }
+    .prop-badge.alt  { background: #f5f0e8; color: var(--dark); border: 1px solid #ddd4c0; }
+    .prop-badge.sub  { background: var(--bg-section); color: var(--warm-gray); border: 1px solid var(--border); }
+
+    .prop-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+    .prop-spec .s-label { font-size: 10px; color: var(--warm-gray); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 3px; }
+    .prop-spec .s-val   { font-size: 15px; font-weight: 600; color: var(--dark); }
+    .prop-price         { font-size: 22px; font-weight: 700; color: var(--red); }
+
+    .prop-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .prop-tag {
+      font-size: 13px;
+      color: var(--warm-gray);
+      padding: 3px 10px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: var(--bg-section);
+      letter-spacing: 0.3px;
+    }
+    .prop-note {
+      font-size: 14px;
+      color: var(--warm-gray);
+      line-height: 1.7;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* ══════════════════════════
+       S01 — 我們所理解的您
+    ══════════════════════════ */
+    .profile-prose {
+      font-size: 16px;
+      line-height: 2;
+      color: var(--dark);
+      background: var(--bg-warm);
+      border-left: 3px solid var(--gold);
+      padding: 22px 28px;
+      border-radius: 0 2px 2px 0;
+      letter-spacing: 0.3px;
+    }
+
+    /* ══════════════════════════
+       S02 — 家庭動力
+    ══════════════════════════ */
+    .dynamics-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    .dynamics-table th {
+      background: #fff;
+      color: var(--dark);
+      font-size: 13px;
+      letter-spacing: 1px;
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .dynamics-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--dark);
+      vertical-align: top;
+      line-height: 1.7;
+    }
+    .dynamics-table tr:last-child td { border-bottom: none; }
+    .dynamics-table td:first-child { white-space: nowrap; }
+    .veto-note {
+      font-size: 15px;
+      color: var(--warm-gray);
+      padding: 14px 20px;
+      background: var(--bg-section);
+      border-left: 2px solid var(--red);
+      letter-spacing: 0.3px;
+      line-height: 1.8;
+    }
+
+    /* ══════════════════════════
+       S03 — 需求取捨
+    ══════════════════════════ */
+    .tension-items { display: flex; flex-direction: column; gap: 24px; }
+    .tension-item {
+      display: grid;
+      grid-template-columns: 1fr 48px 1fr;
+      align-items: stretch;
+      gap: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      overflow: visible;
+      box-shadow: none;
+    }
+    .tension-side {
+      padding: 24px 28px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--dark);
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+    }
+    .tension-side .t-label {
+      font-size: 16px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .tension-side:first-child .t-label { color: var(--gold); }
+    .tension-side:last-child .t-label { color: var(--red); }
+    .tension-vs {
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 1px;
+      background: transparent;
+      padding: 0;
+      align-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tension-resolve {
+      margin-top: 14px;
+      font-size: 15px;
+      color: var(--warm-gray);
+      padding: 14px 20px;
+      background: var(--bg-warm);
+      border-left: 2px solid var(--gold);
+      letter-spacing: 0.3px;
+      line-height: 1.8;
+    }
+    .no-tension {
+      font-size: 15px;
+      color: var(--warm-gray);
+      padding: 18px 20px;
+      background: var(--bg-section);
+      border-left: 2px solid var(--gold);
+    }
+
+    /* ══════════════════════════
+       S05 — 理想物件畫像
+    ══════════════════════════ */
+    .portrait-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      background: transparent;
+      border: none;
+      margin-bottom: 28px;
+    }
+    .portrait-item {
+      background: #fff;
+      padding: 20px 22px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .portrait-item:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .portrait-item .pi-label {
+      font-size: 16px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .portrait-item .pi-val {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .portrait-item .pi-note {
+      font-size: 13px;
+      color: var(--warm-gray);
+      margin-top: 3px;
+    }
+    .drive-tags { margin-bottom: 24px; }
+    .drive-tags-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--warm-gray);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .drive-tag-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 15px;
+    }
+    .drive-tag-row:last-child { border-bottom: none; }
+    .dt-priority {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--red);
+      min-width: 40px;
+    }
+    .dt-desc { color: var(--dark); line-height: 1.6; }
+    .tolerance-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      background: transparent;
+      border: none;
+      margin-top: 20px;
+    }
+    .tol-col {
+      flex: 1;
+      background: #fff;
+      padding: 24px 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+    }
+    .tol-title {
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      font-weight: 700;
+    }
+    .tol-title.ok   { color: var(--gold); border-bottom: 2px solid var(--gold); }
+    .tol-title.veto { color: var(--red); border-bottom: 2px solid var(--red); }
+    .tol-item {
+      font-size: 14px;
+      color: var(--warm-gray);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border-light);
+      line-height: 1.6;
+    }
+    .tol-item:last-child { border-bottom: none; }
+
+    /* ══════════════════════════
+       S06 — 區域適配
+    ══════════════════════════ */
+    .area-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    .area-table th {
+      background: #fff;
+      color: var(--dark);
+      font-size: 13px;
+      letter-spacing: 1px;
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .area-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--dark);
+      vertical-align: top;
+      line-height: 1.7;
+    }
+    .area-table tr:last-child td { border-bottom: none; }
+    .area-table td:first-child {
+      color: var(--warm-gray);
+      font-size: 14px;
+      white-space: nowrap;
+      width: 120px;
+    }
+
+    /* ══════════════════════════
+       S07 — 時程建議
+    ══════════════════════════ */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .tl-item {
+      display: flex;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-light);
+      align-items: flex-start;
+    }
+    .tl-item:last-child { border-bottom: none; }
+    .tl-dot {
+      flex-shrink: 0;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--red);
+      margin-top: 6px;
+      position: relative;
+    }
+    .tl-dot::after {
+      content: '';
+      position: absolute;
+      left: 5px; top: 12px;
+      width: 1px;
+      height: calc(100% + 20px);
+      background: var(--border-light);
+    }
+    .tl-item:last-child .tl-dot::after { display: none; }
+    .tl-body { flex: 1; }
+    .tl-time {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .tl-title { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
+    .tl-desc  { font-size: 14px; color: var(--warm-gray); line-height: 1.7; }
+    .urgent-tag {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--red);
+      border: 1px solid var(--red);
+      padding: 2px 8px;
+      border-radius: 2px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* ══════════════════════════
+       S08 — 下一步行動
+    ══════════════════════════ */
+    .action-steps { display: flex; flex-direction: column; }
+    .action-step {
+      display: flex;
+      gap: 24px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .action-step:last-child { border-bottom: none; }
+    .step-num {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      border: 1.5px solid var(--red);
+      color: var(--red);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .step-body .s-title { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 4px; letter-spacing: 0.3px; }
+    .step-body .s-desc  { font-size: 14px; color: var(--warm-gray); line-height: 1.7; }
+    .step-time {
+      display: inline-block;
+      margin-top: 7px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 1px;
+    }
+
+    /* ══════════════════════════
+       頁尾
+    ══════════════════════════ */
+    .footer-img {
+      width: 100%;
+      display: block;
+    }
+    .footer-contact {
+      background: var(--bg);
+      color: #3D3935;
+      padding: 20px 52px 18px;
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      line-height: 1.9;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-contact .agent-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .footer-contact strong { color: var(--red); font-weight: 700; }
+    .footer-contact .divider {
+      border: none;
+      border-top: 1px solid rgba(61,57,53,0.2);
+      margin: 10px 0;
+    }
+    .footer-contact .disclosure {
+      color: rgba(61,57,53,0.55);
+      font-size: 10px;
+      letter-spacing: 0.4px;
+      line-height: 2;
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .footer-contact .disc-col { display: flex; flex-direction: column; }
+    .footer-contact .copy  { font-size: 10px; letter-spacing: 0.5px; }
+
+    /* ── 目次導航 ── */
+    .toc {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 10px 52px;
+      display: flex; gap: 10px; flex-wrap: wrap;
+      font-size: 14px;
+    }
+    .toc a {
+      color: var(--warm-gray); text-decoration: none;
+      padding: 8px 18px; border-radius: 6px;
+      letter-spacing: 0.5px; white-space: nowrap;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      border: 1px solid var(--border-light);
+      transition: all 0.2s;
+    }
+    .toc a:hover { background: var(--bg-section); color: var(--dark); box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+
+    /* ── Print (Chrome optimized) ── */
+    @page { size: A4; margin: 15mm 12mm; }
+    @media print {
+      body { background: #fff; }
+      .page { max-width: 100%; box-shadow: none; padding: 0; }
+      .toc { display: none; }
+      .cover { page-break-after: always; }
+      section { page-break-inside: avoid; page-break-before: auto; }
+      .section-head, .budget-rows, .portrait-grid, .drive-tags,
+      .tolerance-row, .tension-pair, .dynamics-table, .area-table,
+      .bar-group, .step-item, .timeline-item {
+        break-inside: avoid;
+      }
+      .footer { page-break-before: auto; }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      .page { max-width: 100%; box-shadow: none; }
+      .toc { padding: 8px 16px; gap: 4px; }
+      .toc a { font-size: 10px; padding: 3px 8px; }
+      .header, section { padding: 28px 20px; }
+      .cover { padding: 40px 20px; }
+      .cover-title { font-size: 26px; letter-spacing: 3px; }
+      .cover-meta { gap: 20px; justify-content: flex-start; flex-direction: column; }
+      .cover-meta-item { padding-left: 0; }
+      .cover-meta-item::before { display: none; }
+      .need-grid { grid-template-columns: 1fr; }
+      .footer-contact { padding: 16px 20px; }
+      .footer-contact .agent-row { flex-direction: column; align-items: flex-start; }
+      .footer-cols { flex-direction: column; gap: 12px; }
+      .footer-contact .disclosure { flex-direction: column; gap: 8px; font-size: 9px; }
+      .footer-contact .copy { font-size: 9px; }
+      .footer-contact .agent-row div { font-size: 12px; }
+    }
+
+    /* ── 滾動淡入動畫 ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-child > * {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-child.revealed > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-child.revealed > *:nth-child(1) { transition-delay: 0s; }
+    .reveal-child.revealed > *:nth-child(2) { transition-delay: 0.08s; }
+    .reveal-child.revealed > *:nth-child(3) { transition-delay: 0.16s; }
+    .reveal-child.revealed > *:nth-child(4) { transition-delay: 0.24s; }
+    .reveal-child.revealed > *:nth-child(5) { transition-delay: 0.32s; }
+    .reveal-child.revealed > *:nth-child(6) { transition-delay: 0.4s; }
+    @media print {
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .reveal-child > * { opacity: 1 !important; transform: none !important; }
+      .cover-hero::after, .cover-hero::before { animation: none !important; }
+      .cover-eyebrow { animation: none !important; -webkit-text-fill-color: rgba(255,255,255,0.7) !important; background: none !important; }
+      .cover-bottom::before { animation: none !important; transform: scaleX(1) !important; }
+    }
+    /* ── 授權閘門 ── */
+    .auth-gate {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #fff;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    .auth-gate.unlocked {
+      opacity: 0; visibility: hidden; pointer-events: none;
+    }
+    .auth-gate .auth-logo { height: 48px; margin-bottom: 64px; }
+    .auth-gate .auth-box { text-align: center; }
+    .auth-gate .auth-label {
+      font-size: 13px; color: var(--warm-gray);
+      letter-spacing: 2px; margin-bottom: 28px;
+    }
+    .auth-gate .auth-inputs {
+      display: flex; gap: 12px; justify-content: center; margin-bottom: 28px;
+    }
+    .auth-gate .auth-inputs input {
+      width: 52px; height: 60px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-size: 24px; font-weight: 700;
+      text-align: center;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s;
+      font-family: inherit;
+    }
+    .auth-gate .auth-inputs input:focus {
+      border-color: var(--gold);
+    }
+    .auth-gate .auth-inputs input.error {
+      border-color: var(--red);
+      animation: auth-shake 0.4s ease;
+    }
+    .auth-gate .auth-hint {
+      font-size: 11px; color: var(--border);
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    .auth-gate .auth-hint.error { color: var(--red); }
+    @keyframes auth-shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+    @media print { .auth-gate { display: none !important; } }
+  </style>
+</head>
+<body>
+
+<!-- 授權閘門 -->
+<div class="auth-gate" id="authGate">
+  <img class="auth-logo" src="../永慶CIS/店名Logo_永慶不動產_溪洲店.png" alt="永慶不動產 溪洲店" />
+  <div class="auth-box">
+    <div class="auth-label">請輸入授權碼</div>
+    <div class="auth-inputs" id="authInputs">
+      <input type="tel" maxlength="1" inputmode="numeric" autocomplete="off" />
+      <input type="tel" maxlength="1" inputmode="numeric" autocomplete="off" />
+      <input type="tel" maxlength="1" inputmode="numeric" autocomplete="off" />
+      <input type="tel" maxlength="1" inputmode="numeric" autocomplete="off" />
+    </div>
+    <div class="auth-hint" id="authHint">專屬服務文件</div>
+  </div>
+</div>
+<div class="page">
+
+  <!-- 頁眉 -->
+  <header class="header">
+    <div class="logo-wrap">
+      <img src="../永慶CIS/店名Logo_永慶不動產_溪洲店.png" alt="永慶不動產 溪洲店" />
+    </div>
+    <div class="header-right">
+      <div class="doc-eyebrow">PROFESSIONAL SERVICE</div>
+      <div class="doc-title">購屋計畫建議書</div>
+    </div>
+  </header>
+  <div class="red-line"></div>
+
+  <!-- 封面 -->
+  <div class="cover">
+    <div class="cover-hero">
+      <div class="cover-eyebrow">PURCHASE PLAN · EXCLUSIVE PROPOSAL</div>
+      <div class="cover-title">購屋計畫建議書</div>
+      <div class="cover-subtitle">為您量身規劃的購屋路徑</div>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-meta">
+        <div class="cover-meta-item"><label>客戶姓名</label><span>王〇〇 先生</span></div>
+        <div class="cover-meta-item"><label>建議日期</label><span>2026 年 4 月</span></div>
+        <div class="cover-meta-item"><label>服務仲介</label><span>胡志宇　店長</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 目次導航 -->
+  <nav class="toc">
+    <a href="#s1">理解的您</a>
+    <a href="#s2">家庭動力</a>
+    <a href="#s3">理想物件</a>
+    <a href="#s4">需求取捨</a>
+    <a href="#s5">財務框架</a>
+    <a href="#s6">區域適配</a>
+    <a href="#s7">時程建議</a>
+    <a href="#s8">下一步</a>
+  </nav>
+
+  <!-- SECTION 01 — 我們所理解的您 (Your Profile) -->
+  <section id="s1">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 01</div>
+      <div class="section-title">我們所理解的您</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="profile-prose">
+      根據我們的對話，您最在意的是家人的安全感與孩子未來的成長環境。通勤便利性是不可退讓的硬底線，而「有一個真正屬於家的空間」是您購屋最深層的驅動力。您不是在買房子，您是在為這個家建立一個穩固的錨點。<br><br>
+      您對品質敏感，不喜歡將就，但也清楚財務邊界——您要的是在預算內找到最接近理想的答案，而不是無止盡地等待完美物件。
+    </div>
+  </section>
+
+  <!-- SECTION 02 — 家庭動力與共識 (Family Dynamics) -->
+  <section id="s2">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 02</div>
+      <div class="section-title">家庭動力與共識</div>
+      <div class="section-rule"></div>
+    </div>
+    <table class="dynamics-table">
+      <thead>
+        <tr>
+          <th>關係人</th>
+          <th>核心訴求</th>
+          <th>本計劃如何回應</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>王先生</strong></td>
+          <td>通勤效率、財務健全、物件保值性</td>
+          <td>鎖定捷運/公車 10 分鐘內、貸款負擔率控制在 33% 以下、優先新屋或屋況良好之物件</td>
+        </tr>
+        <tr>
+          <td><strong>王太太</strong></td>
+          <td>學區品質、社區安全感、生活機能</td>
+          <td>目標區域涵蓋良好學區，優先篩選有管理員之社區，並確認鄰近生活機能</td>
+        </tr>
+        <tr>
+          <td><strong>子女</strong></td>
+          <td>成長空間、就學便利</td>
+          <td>格局以 3 房為基準，預留彈性成長空間</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- veto-note: 內部參考，不對客戶顯示 -->
+  </section>
+
+  <!-- SECTION 03 — 理想物件畫像 (Ideal Property Portrait) -->
+  <section id="s3">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 03</div>
+      <div class="section-title">理想物件畫像</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="portrait-grid reveal-child">
+      <div class="portrait-item">
+        <div class="pi-label">總價帶</div>
+        <div class="pi-val">1,200 – 1,500 萬</div>
+        <div class="pi-note">財務框架推算，備案可至 1,600 萬</div>
+      </div>
+      <div class="portrait-item">
+        <div class="pi-label">坪數帶</div>
+        <div class="pi-val">30 – 45 坪</div>
+        <div class="pi-note">實際室內 ≥ 22 坪，含公設</div>
+      </div>
+      <div class="portrait-item">
+        <div class="pi-label">格局</div>
+        <div class="pi-val">3 房 2 廳 2 衛</div>
+        <div class="pi-note">需有獨立主臥衛浴</div>
+      </div>
+      <div class="portrait-item">
+        <div class="pi-label">區位半徑</div>
+        <div class="pi-val">樹林 / 三峽 / 鶯歌</div>
+        <div class="pi-note">捷運或公車站 10 分鐘步行內</div>
+      </div>
+      <div class="portrait-item">
+        <div class="pi-label">屋齡偏好</div>
+        <div class="pi-val">15 年內為佳</div>
+        <div class="pi-note">超過 15 年需有電梯 + 管委會</div>
+      </div>
+      <div class="portrait-item">
+        <div class="pi-label">必要設施</div>
+        <div class="pi-val">車位 ＋ 電梯</div>
+        <div class="pi-note">車位須含於總價內，無法外加</div>
+      </div>
+    </div>
+
+    <div class="drive-tags">
+      <div class="drive-tags-label">核心需求對照</div>
+      <div class="drive-tag-row">
+        <div class="dt-priority">核心①</div>
+        <div class="dt-desc">安全感需求高 → 物件需有管理員或門禁系統、低犯罪率社區、結構安全（非海砂屋/輻射屋）</div>
+      </div>
+      <div class="drive-tag-row">
+        <div class="dt-priority">核心②</div>
+        <div class="dt-desc">家庭傳承意識 → 學區品質是重要加分項，周邊有公園、兒童設施為優先</div>
+      </div>
+      <div class="drive-tag-row">
+        <div class="dt-priority">顯著③</div>
+        <div class="dt-desc">財務穩健意識 → 總價不超出框架，月付佔收入比低於 35%，物件保值性佳（主要幹道旁、捷運效益）</div>
+      </div>
+    </div>
+
+    <div class="tolerance-row">
+      <div class="tol-col">
+        <div class="tol-title ok">可接受缺陷</div>
+        <div class="tol-item">屋齡 10–15 年（管理良好）</div>
+        <div class="tol-item">非正南北向（東或西向可）</div>
+        <div class="tol-item">三峽 / 鶯歌（通勤在 40 分內）</div>
+        <div class="tol-item">坪數 30 坪起（格局方正優先）</div>
+      </div>
+      <div class="tol-col">
+        <div class="tol-title veto">硬否決條件</div>
+        <div class="tol-item">無停車位（或車位需另購）</div>
+        <div class="tol-item">嫌惡設施 200 公尺內</div>
+        <div class="tol-item">無電梯（4 樓以上）</div>
+        <div class="tol-item">學區評價差或無對應學校</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04 — 需求取捨 (Tension Check) -->
+  <section id="s4">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 04</div>
+      <div class="section-title">需求取捨</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="tension-items">
+      <div>
+        <div class="tension-item">
+          <div class="tension-side">
+            <div class="t-label">想要</div>
+            新屋、大坪數、好學區、低公設比、近捷運、有車位
+          </div>
+          <div class="tension-vs">VS</div>
+          <div class="tension-side">
+            <div class="t-label">預算限制</div>
+            總預算 1,500 萬，在樹林區同時滿足全部條件仍需取捨
+          </div>
+        </div>
+        <div class="tension-resolve">
+          ✦ 平衡方式：以「交通 + 格局 + 學區」為核心三項硬條件，屋齡與坪數作為彈性條件。在 1,500 萬內，可找到滿足核心三項的物件，坪數可接受 30 坪起，屋齡可放寬至 15 年但需有管理員。
+        </div>
+      </div>
+      <div>
+        <div class="tension-item">
+          <div class="tension-side">
+            <div class="t-label">王先生</div>
+            財務保守，希望自備款充足、月付輕鬆
+          </div>
+          <div class="tension-vs">VS</div>
+          <div class="tension-side">
+            <div class="t-label">王太太</div>
+            希望一步到位，不想未來換屋，傾向稍微拉高預算
+          </div>
+        </div>
+        <div class="tension-resolve">
+          ✦ 平衡方式：以 1,500 萬為上限，同時準備 1,600 萬備案，在找到理想物件時有彈性。先確認銀行核貸額度，讓財務邊界清晰，決策自然收斂。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05 — 財務框架 (Financial Framework) -->
+  <section id="s5">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 05</div>
+      <div class="section-title">財務框架</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="budget-hero-card">
+      <div class="budget-row total">
+        <span class="b-name">購屋總預算（目標）</span>
+        <span class="b-val" id="val-total">1,500 萬元</span>
+      </div>
+      <div style="padding:12px 0 0;">
+        <input type="range" id="slider-total" min="500" max="5000" step="50" value="1500"
+          style="width:100%;accent-color:var(--red);cursor:pointer;height:6px;" />
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--warm-gray);margin-top:4px;">
+          <span>500 萬</span><span>5,000 萬</span>
+        </div>
+      </div>
+    </div>
+    <div class="budget-rows">
+      <div class="budget-row">
+        <span class="b-name">自備款（建議 25%）</span>
+        <span class="b-val" id="val-down">375 萬元</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-name">貸款金額（建議 75%）</span>
+        <span class="b-val" id="val-loan">1,125 萬元</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-name">每月還款試算（30 年 / 利率 2.5%）</span>
+        <span class="b-val" id="val-monthly">約 44,400 元 / 月</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-name">稅費 ＋ 代書</span>
+        <span class="b-val">約 5 – 15 萬元</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-name">裝修費用（每坪約 10–15 萬）</span>
+        <span class="b-val">依需求估算</span>
+      </div>
+      <div class="budget-row">
+        <span class="b-name">仲介服務費（成交價 1–2%）</span>
+        <span class="b-val" id="val-fee">約 15 – 30 萬元</span>
+      </div>
+    </div>
+    <div class="bar-group">
+      <div class="bar-meta"><span>自備款比例</span><span>25%</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:25%"></div></div>
+    </div>
+    <div class="bar-group">
+      <div class="bar-meta"><span>建議家庭月收入（月付佔 1/3）</span><span id="val-income">約 133,200 元</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:33%"></div></div>
+    </div>
+    <div class="budget-note">
+      ＊ 以上試算僅供參考，實際核貸金額與利率依銀行審核結果為準。建議預先向 2–3 家銀行申請貸款預審，確認實際可貸額度後再鎖定目標物件。
+    </div>
+    <script>
+    (function(){
+      var slider = document.getElementById('slider-total');
+      function fmt(n){ return n.toLocaleString('zh-TW'); }
+      function update(){
+        var total = parseInt(slider.value);
+        var down = Math.round(total * 0.25);
+        var loan = total - down;
+        // 月還款：等額本息 30年 2.5%
+        var r = 0.025 / 12, n = 360;
+        var loanAmt = loan * 10000;
+        var monthly = Math.round(loanAmt * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1));
+        var income = monthly * 3;
+        var feeL = Math.round(total * 0.01);
+        var feeH = Math.round(total * 0.02);
+        document.getElementById('val-total').textContent = fmt(total) + ' 萬元';
+        document.getElementById('val-down').textContent = fmt(down) + ' 萬元';
+        document.getElementById('val-loan').textContent = fmt(loan) + ' 萬元';
+        document.getElementById('val-monthly').textContent = '約 ' + fmt(monthly) + ' 元 / 月';
+        document.getElementById('val-fee').textContent = '約 ' + fmt(feeL) + ' – ' + fmt(feeH) + ' 萬元';
+        document.getElementById('val-income').textContent = '約 ' + fmt(income) + ' 元';
+      }
+      slider.addEventListener('input', update);
+    })();
+    </script>
+  </section>
+
+  <!-- SECTION 06 — 區域生活適配 (Area-Lifestyle Fit) -->
+  <section id="s6">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 06</div>
+      <div class="section-title">區域生活適配</div>
+      <div class="section-rule"></div>
+    </div>
+    <table class="area-table">
+      <thead>
+        <tr>
+          <th>面向</th>
+          <th>分析</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>通勤路線</td>
+          <td>樹林站（台鐵縱貫線）至台北約 40 分；三鶯線預計通車後可大幅縮短往返三峽的時間，具未來增值潛力</td>
+        </tr>
+        <tr>
+          <td>學區資源</td>
+          <td>樹林區有樹林國小、樹林國中等公立學校；三峽有北大特區配套學區，評價穩定，符合子女就學需求</td>
+        </tr>
+        <tr>
+          <td>生活機能</td>
+          <td>樹林市中心商圈完整，全聯、家樂福、連鎖餐飲密集；三峽老街、北大商圈生活感佳，醫療院所充足</td>
+        </tr>
+        <tr>
+          <td>區域發展趨勢</td>
+          <td>三鶯線建設持續推進，沿線房價仍具成長空間；樹林重劃區吸引首購族，剛性需求穩健，保值性強</td>
+        </tr>
+        <tr>
+          <td>社區氛圍</td>
+          <td>樹林、三峽以自住家庭為主，社區鄰里關係較緊密，符合家庭安全感需求及子女成長環境要求</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 07 — 購屋時程建議 (Timeline) -->
+  <section id="s7">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 07</div>
+      <div class="section-title">購屋時程建議</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="timeline reveal-child">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-time">本週內</div>
+          <div class="tl-title">申請銀行貸款預審 <span class="urgent-tag">優先</span></div>
+          <div class="tl-desc">同時向 2–3 家銀行提出預審，確認實際可貸額度。財務邊界清楚後，看屋決策才能果斷。</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-time">第 1–2 週</div>
+          <div class="tl-title">第一輪帶看（依畫像篩選 3–5 間）</div>
+          <div class="tl-desc">依本份畫像篩選候選物件，安排現場看屋。重點確認：採光、格局動線、社區管理、周邊環境。</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-time">看屋後 3 天內</div>
+          <div class="tl-title">重新確認條件優先序</div>
+          <div class="tl-desc">實際看屋後感受往往與預期不同。建議看完後重新排序「交通 vs 坪數 vs 屋齡」，縮小目標範圍。</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-body">
+          <div class="tl-time">確認目標後</div>
+          <div class="tl-title">市場比價 ＋ 提出斡旋</div>
+          <div class="tl-desc">鎖定目標物件後，由本店協助調閱周邊成交行情，評估合理出價區間，代為斡旋議價。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 08 — 下一步行動 (Next Step) -->
+  <section id="s8">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 08</div>
+      <div class="section-title">下一步行動</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="action-steps reveal-child">
+      <div class="action-step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="s-title">確認本份計劃書的準確度</div>
+          <div class="s-desc">請告知是否有任何資訊需要調整——預算、區域偏好、家庭動力等。越精確的輸入，越能找到真正適合的房子。</div>
+          <span class="step-time">本次對話後</span>
+        </div>
+      </div>
+      <div class="action-step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="s-title">申請銀行貸款預審</div>
+          <div class="s-desc">建議本週內向 2–3 家銀行提出預審申請。本店可提供配合銀行名單，協助您準備所需文件。</div>
+          <span class="step-time">本週內</span>
+        </div>
+      </div>
+      <div class="action-step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="s-title">安排第一輪帶看</div>
+          <div class="s-desc">我將依據本份畫像，於 5 個工作天內篩選出 3–5 間候選物件，與您確認後安排現場帶看。</div>
+          <span class="step-time">5 個工作天內</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer>
+    <div class="red-line"></div>
+    <img src="../永慶CIS/頁尾_房仲第一品牌.png" alt="永慶不動產 房仲第一品牌" class="footer-img" />
+    <div class="footer-contact">
+      <div class="agent-row">
+        <div>
+          服務仲介：<strong>胡志宇　店長</strong>　｜
+          電話：<strong>02-86872233</strong>　｜
+          E-mail：a86872233@gmail.com
+        </div>
+        <div class="copy">© 2026 永慶不動產 樹林溪洲加盟店　｜　本文件為專屬服務文件，請勿轉發</div>
+      </div>
+      <hr class="divider" />
+      <div class="disclosure">
+        <div class="disc-col">
+          <div>地　址：新北市板橋區溪北路142號</div>
+          <div>電　話：02-86872233</div>
+          <div>傳　真：02-86873322</div>
+          <div>E-mail：a86872233@gmail.com</div>
+        </div>
+        <div class="disc-col">
+          <div>營業名稱：永慶不動產樹林溪洲加盟店</div>
+          <div>加盟證號：109鴻證字第0615號</div>
+          <div>營利事業登記名稱：明慶不動產有限公司</div>
+          <div>營利事業登記證號：北縣商聯乙字第09117085號</div>
+        </div>
+        <div class="disc-col">
+          <div>營利事業統一編號：80096409</div>
+          <div>北府地籍字第0910692409號</div>
+          <div>經紀人蕭寶華(91)北市經證字第00417號</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // ── 滾動淡入 ──
+  document.querySelectorAll('section, .cover-bottom, footer').forEach(el => {
+    el.classList.add('reveal');
+  });
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-child').forEach(el => revealObs.observe(el));
+
+  // ── 授權閘門 ──
+  (function() {
+    const gate = document.getElementById('authGate');
+    const inputs = gate.querySelectorAll('.auth-inputs input');
+    const hint = document.getElementById('authHint');
+
+    inputs.forEach((inp, i) => {
+      inp.addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '').slice(0, 1);
+        if (this.value && i < inputs.length - 1) inputs[i + 1].focus();
+        if (i === inputs.length - 1 && this.value) checkCode();
+      });
+      inp.addEventListener('keydown', function(e) {
+        if (e.key === 'Backspace' && !this.value && i > 0) {
+          inputs[i - 1].focus();
+          inputs[i - 1].value = '';
+        }
+      });
+    });
+    inputs[0].focus();
+
+    function checkCode() {
+      const digits = Array.from(inputs).map(i => parseInt(i.value) || 0);
+      if (digits.some(d => isNaN(d)) || Array.from(inputs).some(i => !i.value)) return;
+      const sum = digits.reduce((a, b) => a + b, 0);
+      if (sum === 23) {
+        gate.classList.add('unlocked');
+      } else {
+        inputs.forEach(i => i.classList.add('error'));
+        hint.textContent = '授權碼錯誤';
+        hint.classList.add('error');
+        setTimeout(() => {
+          inputs.forEach(i => { i.classList.remove('error'); i.value = ''; });
+          hint.textContent = '專屬服務文件';
+          hint.classList.remove('error');
+          inputs[0].focus();
+        }, 800);
+      }
+    }
+  })();
+</script>
+</body>
+</html>

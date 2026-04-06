@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>銷售狀態回報函｜永慶不動產 樹林溪洲店</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: #f0eeeb;
+      color: #2c2c2c;
+      line-height: 1.75;
+    }
+
+    :root {
+      --red:          #C8102E;
+      --dark:         #2c2c2c;
+      --warm-gray:    #6b6560;
+      --gold:         #b8936a;
+      --bg:           #ffffff;
+      --bg-warm:      #faf8f5;
+      --bg-section:   #f5f2ee;
+      --border:       #e2ddd8;
+      --border-light: #ede9e4;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg);
+      box-shadow: 0 4px 40px rgba(0,0,0,0.10);
+      overflow: hidden;
+    }
+
+    /* ── 頁眉 ── */
+    .header {
+      background: var(--bg);
+      padding: 18px 52px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .logo-wrap img { height: 36px; width: auto; }
+    .header-right { text-align: right; }
+    .header-right .doc-eyebrow {
+      font-size: 10px; letter-spacing: 2.5px;
+      color: var(--warm-gray); text-transform: uppercase; margin-bottom: 2px;
+    }
+    .header-right .doc-title {
+      font-size: 14px; font-weight: 700;
+      color: #521506; letter-spacing: 2px;
+    }
+    .red-line { height: 3px; background: var(--red); width: 100%; }
+
+    /* ── 封面 ── */
+    .cover {
+      background: #521506; color: #fff;
+      padding: 0;
+      position: relative; overflow: hidden;
+    }
+    .cover-hero {
+      padding: 80px 52px 72px;
+      position: relative;
+    }
+    .cover-hero::after {
+      content: ''; position: absolute;
+      right: -80px; bottom: -80px;
+      width: 360px; height: 360px;
+      border: none; border-radius: 50%; pointer-events: none;
+      background: conic-gradient(
+        from 0deg,
+        rgba(255,255,255,0.40) 0%,
+        rgba(255,255,255,0.03) 35%,
+        rgba(255,255,255,0.28) 55%,
+        rgba(255,255,255,0.02) 80%,
+        rgba(255,255,255,0.40) 100%
+      );
+      -webkit-mask: radial-gradient(circle, transparent 55%, #000 56%, #000 100%);
+      mask: radial-gradient(circle, transparent 55%, #000 56%, #000 100%);
+      animation: ring-spin 18s linear infinite;
+    }
+    .cover-hero::before {
+      content: ''; position: absolute;
+      right: 80px; top: -40px;
+      width: 180px; height: 180px;
+      border: none; border-radius: 50%; pointer-events: none;
+      background: conic-gradient(
+        from 120deg,
+        rgba(255,255,255,0.35) 0%,
+        rgba(255,255,255,0.02) 30%,
+        rgba(255,255,255,0.22) 60%,
+        rgba(255,255,255,0.01) 85%,
+        rgba(255,255,255,0.35) 100%
+      );
+      -webkit-mask: radial-gradient(circle, transparent 50%, #000 52%, #000 100%);
+      mask: radial-gradient(circle, transparent 50%, #000 52%, #000 100%);
+      animation: ring-spin 12s linear infinite reverse;
+    }
+    @keyframes ring-spin {
+      to { transform: rotate(360deg); }
+    }
+    .cover-bottom {
+      background: var(--bg-warm); color: #3D3935;
+      padding: 32px 52px 36px;
+      position: relative;
+    }
+    .cover-bottom::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      height: 2px;
+      width: 100%;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: line-expand 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+    }
+    @keyframes line-expand {
+      to { transform: scaleX(1); }
+    }
+    .cover-eyebrow {
+      font-size: 12px; letter-spacing: 5px;
+      text-transform: uppercase;
+      font-weight: 700; margin-bottom: 18px;
+      background: linear-gradient(90deg,
+        rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 40%,
+        rgba(255,255,255,1) 50%,
+        rgba(255,255,255,0.7) 60%, rgba(255,255,255,0.7) 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%, 100% { background-position: 100% 0; }
+      50% { background-position: -100% 0; }
+    }
+    .cover-title {
+      font-size: 34px; font-weight: 700;
+      letter-spacing: 6px; line-height: 1.3;
+      margin-bottom: 8px; color: #fff;
+    }
+    .cover-subtitle {
+      font-size: 13px; color: rgba(255,255,255,0.6);
+      letter-spacing: 1.5px; margin-bottom: 0;
+    }
+    .cover-meta { display: flex; gap: 40px; flex-wrap: wrap; justify-content: flex-end; }
+    .cover-meta-item {
+      position: relative;
+      padding-left: 20px;
+    }
+    .cover-meta-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 2px; bottom: 2px;
+      width: 1px;
+      background: var(--border);
+    }
+    .cover-meta-item:first-child { padding-left: 0; }
+    .cover-meta-item:first-child::before { display: none; }
+    .cover-meta-item label {
+      display: block; font-size: 11px; letter-spacing: 3px;
+      color: var(--warm-gray); text-transform: uppercase;
+      margin-bottom: 6px; font-weight: 600;
+    }
+    .cover-meta-item span {
+      font-size: 16px; font-weight: 600;
+      letter-spacing: 1px; color: #3D3935;
+    }
+
+    /* ── Section 通用 ── */
+    section {
+      padding: 56px 52px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border-light);
+    }
+    section:last-of-type { border-bottom: none; padding-bottom: 72px; }
+    section:nth-of-type(even) { background: var(--bg-warm); }
+    .section-head { margin-bottom: 36px; }
+    .section-eyebrow {
+      font-size: 10px; letter-spacing: 3px;
+      color: var(--red); text-transform: uppercase;
+      font-weight: 600; margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 24px; font-weight: 700;
+      color: var(--dark); letter-spacing: 3px;
+    }
+    .section-rule { width: 40px; height: 2.5px; background: var(--gold); margin-top: 10px; }
+    .section-divider {
+      border: none; border-top: 1px solid var(--border-light); margin: 32px 0;
+    }
+
+    /* ── S01 銷售週報 ── */
+    .weekly-summary {
+      font-size: 16px; line-height: 1.9;
+      color: var(--dark);
+      background: var(--bg-warm);
+      border-left: 3px solid var(--gold);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      background: transparent;
+      border: none;
+      margin-bottom: 24px;
+    }
+    .kpi-item {
+      background: #fff; padding: 26px 20px; text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .kpi-item:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .kpi-label {
+      font-size: 16px; letter-spacing: 2px;
+      color: var(--dark); text-transform: uppercase;
+      font-weight: 700; margin-bottom: 10px;
+    }
+    .kpi-val {
+      font-size: 48px; font-weight: 700; color: var(--dark);
+      letter-spacing: -1px; line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .kpi-val.up   { color: #2a9; }
+    .kpi-val.down { color: var(--red); }
+    .kpi-val.gold { color: var(--gold); }
+    .kpi-trend {
+      font-size: 13px; color: var(--warm-gray);
+    }
+    .feedback-list { display: flex; flex-direction: column; gap: 0; }
+    .feedback-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-light);
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .feedback-item:last-child { border-bottom: none; }
+    .fb-date {
+      flex-shrink: 0;
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 1px; color: var(--gold);
+      min-width: 70px; margin-top: 2px;
+    }
+    .fb-text { font-size: 14px; color: var(--warm-gray); line-height: 1.7; }
+    .fb-tag {
+      display: inline-block;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 2px; margin-left: 6px;
+      vertical-align: middle;
+    }
+    .fb-tag.price { background: #fff0f0; color: var(--red); border: 1px solid #f5c0c0; }
+    .fb-tag.pos   { background: #f0fff8; color: #2a9; border: 1px solid #b0e8d0; }
+    .fb-tag.neu   { background: var(--bg-section); color: var(--warm-gray); border: 1px solid var(--border); }
+
+    /* ── S02 競品動態 ── */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .comp-card {
+      background: #fff;
+      padding: 28px 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .comp-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .comp-card.threat-high-card { border-top: 3px solid var(--red); }
+    .comp-card.threat-mid-card  { border-top: 3px solid #c87020; }
+    .comp-card.threat-low-card  { border-top: 3px solid var(--border); }
+    .comp-name {
+      font-size: 16px; font-weight: 700;
+      color: var(--dark); margin-bottom: 4px;
+    }
+    .comp-spec {
+      font-size: 13px; color: var(--warm-gray);
+      margin-bottom: 14px; letter-spacing: 0.5px;
+    }
+    .comp-price {
+      font-size: 24px; font-weight: 700;
+      margin-bottom: 12px; line-height: 1.2;
+    }
+    .comp-card.threat-high-card .comp-price { color: var(--red); }
+    .comp-card.threat-mid-card .comp-price  { color: #c87020; }
+    .comp-card.threat-low-card .comp-price  { color: var(--warm-gray); }
+    .comp-detail {
+      font-size: 14px; color: var(--dark);
+      line-height: 1.7; margin-bottom: 12px;
+    }
+    .comp-threat {
+      font-size: 13px; font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+    .threat-high { background: #fff0f0; color: var(--red); }
+    .threat-mid  { background: #fff8f0; color: #c87020; }
+    .threat-low  { background: var(--bg-section); color: var(--warm-gray); }
+
+    /* ── S03 價值落差 ── */
+    .gap-analysis {
+      font-size: 16px; line-height: 1.9; color: var(--dark);
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      border-left: 4px solid var(--red);
+      padding: 24px 28px; margin-bottom: 24px;
+    }
+    .gap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .gap-card {
+      background: #fff;
+      padding: 28px 24px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .gap-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .gap-icon {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .gap-card .g-title {
+      font-size: 16px; font-weight: 700;
+      color: var(--dark); margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--red);
+      letter-spacing: 1px;
+    }
+    .gap-card .g-desc {
+      font-size: 14px; color: var(--warm-gray); line-height: 1.7;
+    }
+
+    /* ── S04 行動方案 ── */
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      background: transparent;
+      border: none;
+      margin-bottom: 24px;
+    }
+    .action-col {
+      background: #fff; padding: 24px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .action-col:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .action-col.gold-col { background: #fff8f0; border-top: 3px solid var(--gold); box-shadow: 0 4px 20px rgba(0,0,0,0.12), 0 1px 6px rgba(0,0,0,0.06); }
+    .action-col-label {
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .action-col-label.a { color: var(--warm-gray); }
+    .action-col-label.b { color: var(--warm-gray); }
+    .action-col-label.c { color: var(--gold); }
+    .action-col-title {
+      font-size: 16px; font-weight: 700;
+      color: var(--dark); margin-bottom: 6px;
+    }
+    .action-price {
+      font-size: 22px; font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .action-price.a { color: var(--warm-gray); }
+    .action-price.b { color: var(--dark); }
+    .action-price.c { color: var(--red); }
+    .action-desc {
+      font-size: 14px; color: var(--warm-gray);
+      line-height: 1.7; margin-bottom: 12px;
+    }
+    .action-risk {
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 2px;
+      line-height: 1.6;
+    }
+    .action-risk.a { background: var(--bg-section); color: var(--warm-gray); }
+    .action-risk.b { background: #fff8f0; color: #c87020; }
+    .action-risk.c { background: #fff0f0; color: var(--red); }
+    .action-close {
+      font-size: 15px; color: var(--warm-gray);
+      padding: 16px 20px;
+      background: var(--bg-section);
+      border-left: 2px solid var(--gold);
+      line-height: 1.7;
+    }
+
+    /* ── 頁尾 ── */
+    .footer-img { width: 100%; display: block; }
+    .footer-contact {
+      background: var(--bg);
+      color: #3D3935;
+      padding: 20px 52px 18px;
+      font-size: 13px; letter-spacing: 0.3px; line-height: 1.9;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-contact .agent-row {
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap;
+      gap: 6px; margin-bottom: 10px;
+    }
+    .footer-contact strong { color: var(--red); font-weight: 700; }
+    .footer-contact .divider {
+      border: none; border-top: 1px solid rgba(61,57,53,0.2); margin: 10px 0;
+    }
+    .footer-contact .disclosure {
+      color: rgba(61,57,53,0.55);
+      font-size: 10px; letter-spacing: 0.4px;
+      line-height: 2; display: flex; gap: 32px; flex-wrap: wrap;
+    }
+    .footer-contact .disc-col { display: flex; flex-direction: column; }
+    .footer-contact .copy { font-size: 10px; letter-spacing: 0.5px; }
+
+    /* ── 目次導航 ── */
+    .toc {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 10px 52px;
+      display: flex; gap: 10px; flex-wrap: wrap;
+      font-size: 14px;
+    }
+    .toc a {
+      color: var(--warm-gray); text-decoration: none;
+      padding: 8px 18px; border-radius: 6px;
+      letter-spacing: 0.5px; white-space: nowrap;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      border: 1px solid var(--border-light);
+      transition: all 0.2s;
+    }
+    .toc a:hover { background: var(--bg-section); color: var(--dark); box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+
+    @page { size: A4; margin: 15mm 12mm; }
+    @media print {
+      body { background: #fff; }
+      .page { max-width: 100%; box-shadow: none; padding: 0; }
+      .toc { display: none; }
+      .cover { page-break-after: always; }
+      section { page-break-inside: avoid; page-break-before: auto; }
+      .section-head, .kpi-grid, .kpi-item, .comp-grid, .comp-card,
+      .gap-grid, .gap-card, .action-grid, .action-col, .fb-item {
+        break-inside: avoid;
+      }
+      .footer { page-break-before: auto; }
+    }
+    @media (max-width: 600px) {
+      .page { max-width: 100%; box-shadow: none; }
+      .toc { padding: 8px 16px; gap: 4px; }
+      .toc a { font-size: 10px; padding: 3px 8px; }
+      .header, section { padding: 28px 20px; }
+      .cover { padding: 40px 20px; }
+      .cover-title { font-size: 26px; letter-spacing: 3px; }
+      .cover-meta { gap: 20px; justify-content: flex-start; flex-direction: column; }
+      .cover-meta-item { padding-left: 0; }
+      .cover-meta-item::before { display: none; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .action-grid { grid-template-columns: 1fr; }
+      .comp-grid { grid-template-columns: 1fr; }
+      .gap-grid { grid-template-columns: 1fr; }
+      .footer-contact { padding: 16px 20px; }
+      .footer-contact .agent-row { flex-direction: column; align-items: flex-start; }
+      .footer-cols { flex-direction: column; gap: 12px; }
+      .footer-contact .disclosure { flex-direction: column; gap: 8px; font-size: 9px; }
+      .footer-contact .copy { font-size: 9px; }
+      .footer-contact .agent-row div { font-size: 12px; }
+    }
+
+    /* ── 滾動淡入動畫 ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-child > * {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-child.revealed > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-child.revealed > *:nth-child(1) { transition-delay: 0s; }
+    .reveal-child.revealed > *:nth-child(2) { transition-delay: 0.08s; }
+    .reveal-child.revealed > *:nth-child(3) { transition-delay: 0.08s; }
+    .reveal-child.revealed > *:nth-child(4) { transition-delay: 0.16s; }
+    .reveal-child.revealed > *:nth-child(5) { transition-delay: 0.24s; }
+    .reveal-child.revealed > *:nth-child(6) { transition-delay: 0.32s; }
+    @media print {
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .reveal-child > * { opacity: 1 !important; transform: none !important; }
+      .cover-hero::after, .cover-hero::before { animation: none !important; }
+      .cover-eyebrow { animation: none !important; -webkit-text-fill-color: rgba(255,255,255,0.7) !important; background: none !important; }
+      .cover-bottom::before { animation: none !important; transform: scaleX(1) !important; }
+    }
+    /* ── 授權閘門 ── */
+    .auth-gate {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #fff;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    .auth-gate.unlocked {
+      opacity: 0; visibility: hidden; pointer-events: none;
+    }
+    .auth-gate .auth-logo { height: 48px; margin-bottom: 64px; }
+    .auth-gate .auth-box { text-align: center; }
+    .auth-gate .auth-label {
+      font-size: 13px; color: var(--warm-gray);
+      letter-spacing: 2px; margin-bottom: 28px;
+    }
+    .auth-gate .auth-inputs {
+      display: flex; gap: 12px; justify-content: center; margin-bottom: 28px;
+    }
+    .auth-gate .auth-inputs input {
+      width: 52px; height: 60px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-size: 24px; font-weight: 700;
+      text-align: center;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s;
+      font-family: inherit;
+    }
+    .auth-gate .auth-inputs input:focus {
+      border-color: var(--gold);
+    }
+    .auth-gate .auth-inputs input.error {
+      border-color: var(--red);
+      animation: auth-shake 0.4s ease;
+    }
+    .auth-gate .auth-hint {
+      font-size: 11px; color: var(--border);
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    .auth-gate .auth-hint.error { color: var(--red); }
+    @keyframes auth-shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+    @media print { .auth-gate { display: none !important; } }
+  </style>
+</head>
+<body>
+
+<!-- 授權閘門 -->
+<div class="auth-gate" id="authGate">
+  <img class="auth-logo" src="../永慶CIS/店名Logo_永慶不動產_溪洲店.png" alt="永慶不動產 溪洲店" />
+  <div class="auth-box">
+    <div class="auth-label">請輸入授權碼</div>
+    <div class="auth-inputs" id="authInputs">
+      <input type="tel" maxlength="1" inputmode="numeric" autocomplete="off" />
+      <input type="tel" maxlength="1" inputmode="numeric" autocomplete="off" />
+      <input type="tel" maxlength="1" inputmode="numeric" autocomplete="off" />
+      <input type="tel" maxlength="1" inputmode="numeric" autocomplete="off" />
+    </div>
+    <div class="auth-hint" id="authHint">專屬服務文件</div>
+  </div>
+</div>
+<div class="page">
+
+  <!-- 頁眉 -->
+  <header class="header">
+    <div class="logo-wrap">
+      <img src="../永慶CIS/店名Logo_永慶不動產_溪洲店.png" alt="永慶不動產 溪洲店" />
+    </div>
+    <div class="header-right">
+      <div class="doc-eyebrow">PROFESSIONAL SERVICE</div>
+      <div class="doc-title">銷售狀態回報函</div>
+    </div>
+  </header>
+  <div class="red-line"></div>
+
+  <!-- 封面 -->
+  <div class="cover">
+    <div class="cover-hero">
+      <div class="cover-eyebrow">OWNER PROGRESS REPORT</div>
+      <div class="cover-title">銷售狀態回報函</div>
+      <div class="cover-subtitle">透明回報本週銷售進展，與您一起做出最好的決策</div>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-meta">
+        <div class="cover-meta-item"><label>案名</label><span>樹林區 XX 路 XXX 號 X 樓</span></div>
+        <div class="cover-meta-item"><label>回報日期</label><span>2026 年 4 月</span></div>
+        <div class="cover-meta-item"><label>服務仲介</label><span>胡志宇　店長</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 目次導航 -->
+  <nav class="toc">
+    <a href="#s1">銷售週報</a>
+    <a href="#s2">競品動態</a>
+    <a href="#s3">價值落差</a>
+    <a href="#s4">行動方案</a>
+  </nav>
+
+  <!-- SECTION 01 — 銷售週報 (The Cold Truth) -->
+  <section id="s1">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 01</div>
+      <div class="section-title">銷售週報</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="weekly-summary">
+      本週市場反應如實回報。來電詢問量持平，但帶看後的出價意願偏低——買方最常反應的問題集中在「價格」與「公設比」兩點。這是市場給我們的真實信號，值得認真面對。
+    </div>
+    <div class="kpi-grid reveal-child">
+      <div class="kpi-item">
+        <div class="kpi-label">廣告效益</div>
+        <div class="kpi-val gold">1,240</div>
+        <div class="kpi-trend">本週曝光次數</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-label">本週來電</div>
+        <div class="kpi-val down">3</div>
+        <div class="kpi-trend">上週 4 通 ↓</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-label">本週帶看</div>
+        <div class="kpi-val down">1</div>
+        <div class="kpi-trend">上週 2 組 ↓</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-label">累積帶看</div>
+        <div class="kpi-val up">8</div>
+        <div class="kpi-trend">委託 __ 天</div>
+      </div>
+    </div>
+    <hr class="section-divider" />
+    <div class="feedback-list">
+      <div class="feedback-item">
+        <div class="fb-date">04/01</div>
+        <div class="fb-text">帶看 A 組（夫妻，首購）：屋況滿意，但反映開價超出預算，表示最多考慮 980 萬。</div>
+      </div>
+      <div class="feedback-item">
+        <div class="fb-date">03/28</div>
+        <div class="fb-text">來電 B 先生：詢問車位是否可分開，得知車位含於售價後表示考慮中，尚未進一步約看。</div>
+      </div>
+      <div class="feedback-item">
+        <div class="fb-date">03/26</div>
+        <div class="fb-text">來電 C 小姐：問及公設比，回覆 32% 後語氣趨冷，最終未約帶看。</div>
+      </div>
+      <div class="feedback-item">
+        <div class="fb-date">03/25</div>
+        <div class="fb-text">帶看 D 組（換屋族）：對格局採光給予正面評價，但表示正在比較同社區另一間，態度觀望。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 02 — 競品動態 (The Competitors) -->
+  <section id="s2">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 02</div>
+      <div class="section-title">競品動態</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="comp-grid reveal-child">
+      <div class="comp-card threat-high-card">
+        <div class="comp-name">同社區 X 樓</div>
+        <div class="comp-spec">35 坪 / 18 年</div>
+        <div class="comp-price">1,050 萬</div>
+        <div class="comp-detail">同社區，格局相似，開價低 3%，含平面車位</div>
+        <span class="comp-threat threat-high">威脅：高 — 直接搶走同類買方</span>
+      </div>
+      <div class="comp-card threat-mid-card">
+        <div class="comp-name">鄰近 XX 街</div>
+        <div class="comp-spec">30 坪 / 22 年</div>
+        <div class="comp-price">980 萬</div>
+        <div class="comp-detail">坪數較小但總價低，吸引預算保守買方</div>
+        <span class="comp-threat threat-mid">威脅：中 — 分流低預算族群</span>
+      </div>
+      <div class="comp-card threat-low-card">
+        <div class="comp-name">XX 路新案</div>
+        <div class="comp-spec">38 坪 / 3 年</div>
+        <div class="comp-price">1,280 萬</div>
+        <div class="comp-detail">新屋優勢，屋況無疑慮，但總價高</div>
+        <span class="comp-threat threat-low">威脅：低 — 客群差異明顯</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03 — 價值落差 (The Gap) -->
+  <section id="s3">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 03</div>
+      <div class="section-title">價值落差</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="gap-analysis">
+      核心問題：買方選擇同社區競品，而非選擇我們的物件。<strong>主要原因是開價差距 5%，但買方感受到的差距卻遠超過這個數字。</strong>
+    </div>
+    <div class="gap-grid reveal-child">
+      <div class="gap-card">
+        <div class="gap-icon">1</div>
+        <div class="g-title">定價落差放大了其他缺點</div>
+        <div class="g-desc">同等物件開價高 5% 時，買方會主動放大比較劣勢（公設比、車位位置）。若定價齊平或略低，這些問題往往不會被放大提出。</div>
+      </div>
+      <div class="gap-card">
+        <div class="gap-icon">2</div>
+        <div class="g-title">公設比 32% 成為敘事弱點</div>
+        <div class="g-desc">在買方市場下，買方比較細，公設比是被問及頻率最高的問題。在定價無優勢的情況下，此點成為拒絕的理由。</div>
+      </div>
+      <div class="gap-card">
+        <div class="gap-icon">3</div>
+        <div class="g-title">帶看量下滑，窗口逐漸縮小</div>
+        <div class="g-desc">委託已進入第三週，帶看量由週均 3 組降至 1 組。若持續不調整，物件將進入「滯銷印象」，後續即使降價也難吸引新買方。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04 — 行動方案 (The Action) -->
+  <section id="s4">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 04</div>
+      <div class="section-title">行動方案</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="action-grid reveal-child">
+      <div class="action-col">
+        <div class="action-col-label a">A 保守</div>
+        <div class="action-col-title">維持現況，繼續等待</div>
+        <div class="action-price a">維持 1,080 萬</div>
+        <div class="action-desc">不調整售價，持續行銷。等待精準買方出現或市場好轉。</div>
+        <div class="action-risk a">⚠ 風險：帶看量持續下滑，若 2 週後無進展，物件滯銷印象形成，後續更難議價。</div>
+      </div>
+      <div class="action-col">
+        <div class="action-col-label b">B 穩健</div>
+        <div class="action-col-title">小幅調整，試水溫</div>
+        <div class="action-price b">調至 1,050 萬</div>
+        <div class="action-desc">與同社區競品齊平，消除買方比較劣勢，預期可恢復帶看量。</div>
+        <div class="action-risk b">⚠ 可能不足：若買方心理底價已到 980–1,020 萬，此調整仍可能不夠，需觀察 1–2 週反應。</div>
+      </div>
+      <div class="action-col gold-col">
+        <div class="action-col-label c">C 積極（建議）</div>
+        <div class="action-col-title">一次到位，搶回主動</div>
+        <div class="action-price c">調至 1,020 萬</div>
+        <div class="action-desc">低於競品 3%，重新激活市場興趣，目標在 2 週內重啟帶看、取得出價。</div>
+        <div class="action-risk c">✦ 邏輯：現在讓 60 萬，可以避免 3 個月後滯銷被迫讓 150 萬，且後者還要多付 3 個月的持有成本。</div>
+      </div>
+    </div>
+    <div class="action-close">
+      最終決策由您做主。我們的建議是 C 方案——但無論您選擇哪條路，我們都會全力執行，並在下週回報結果。<br>
+      如有任何問題，隨時來電：<strong>02-86872233　胡志宇 店長</strong>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer>
+    <div class="red-line"></div>
+    <img src="../永慶CIS/頁尾_房仲第一品牌.png" alt="永慶不動產 房仲第一品牌" class="footer-img" />
+    <div class="footer-contact">
+      <div class="agent-row">
+        <div>
+          服務仲介：<strong>胡志宇　店長</strong>　｜
+          電話：<strong>02-86872233</strong>　｜
+          E-mail：a86872233@gmail.com
+        </div>
+        <div class="copy">© 2026 永慶不動產 樹林溪洲加盟店　｜　本文件為專屬服務文件，請勿轉發</div>
+      </div>
+      <hr class="divider" />
+      <div class="disclosure">
+        <div class="disc-col">
+          <div>地　址：新北市板橋區溪北路142號</div>
+          <div>電　話：02-86872233</div>
+          <div>傳　真：02-86873322</div>
+          <div>E-mail：a86872233@gmail.com</div>
+        </div>
+        <div class="disc-col">
+          <div>營業名稱：永慶不動產樹林溪洲加盟店</div>
+          <div>加盟證號：109鴻證字第0615號</div>
+          <div>營利事業登記名稱：明慶不動產有限公司</div>
+          <div>營利事業登記證號：北縣商聯乙字第09117085號</div>
+        </div>
+        <div class="disc-col">
+          <div>營利事業統一編號：80096409</div>
+          <div>北府地籍字第0910692409號</div>
+          <div>經紀人蕭寶華(91)北市經證字第00417號</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // ── 滾動淡入 ──
+  document.querySelectorAll('section, .cover-bottom, footer').forEach(el => {
+    el.classList.add('reveal');
+  });
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-child').forEach(el => revealObs.observe(el));
+
+  // ── 授權閘門 ──
+  (function() {
+    const gate = document.getElementById('authGate');
+    const inputs = gate.querySelectorAll('.auth-inputs input');
+    const hint = document.getElementById('authHint');
+
+    inputs.forEach((inp, i) => {
+      inp.addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '').slice(0, 1);
+        if (this.value && i < inputs.length - 1) inputs[i + 1].focus();
+        if (i === inputs.length - 1 && this.value) checkCode();
+      });
+      inp.addEventListener('keydown', function(e) {
+        if (e.key === 'Backspace' && !this.value && i > 0) {
+          inputs[i - 1].focus();
+          inputs[i - 1].value = '';
+        }
+      });
+    });
+    inputs[0].focus();
+
+    function checkCode() {
+      const digits = Array.from(inputs).map(i => parseInt(i.value) || 0);
+      if (digits.some(d => isNaN(d)) || Array.from(inputs).some(i => !i.value)) return;
+      const sum = digits.reduce((a, b) => a + b, 0);
+      if (sum === 23) {
+        gate.classList.add('unlocked');
+      } else {
+        inputs.forEach(i => i.classList.add('error'));
+        hint.textContent = '授權碼錯誤';
+        hint.classList.add('error');
+        setTimeout(() => {
+          inputs.forEach(i => { i.classList.remove('error'); i.value = ''; });
+          hint.textContent = '專屬服務文件';
+          hint.classList.remove('error');
+          inputs[0].focus();
+        }, 800);
+      }
+    }
+  })();
+</script>
+</body>
+</html>

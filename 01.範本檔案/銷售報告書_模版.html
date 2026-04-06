@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>銷售報告書｜永慶不動產 樹林溪洲店</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: #f0eeeb;
+      color: #2c2c2c;
+      line-height: 1.75;
+    }
+
+    :root {
+      --red:          #C8102E;
+      --dark:         #2c2c2c;
+      --warm-gray:    #6b6560;
+      --gold:         #b8936a;
+      --bg:           #ffffff;
+      --bg-warm:      #faf8f5;
+      --bg-section:   #f5f2ee;
+      --border:       #e2ddd8;
+      --border-light: #ede9e4;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg);
+      box-shadow: 0 4px 40px rgba(0,0,0,0.10);
+      overflow: hidden;
+    }
+
+    /* ── 頁眉 ── */
+    .header {
+      background: var(--bg);
+      padding: 18px 52px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .logo-wrap img { height: 36px; width: auto; }
+    .header-right { text-align: right; }
+    .header-right .doc-eyebrow {
+      font-size: 10px; letter-spacing: 2.5px;
+      color: var(--warm-gray); text-transform: uppercase; margin-bottom: 2px;
+    }
+    .header-right .doc-title {
+      font-size: 14px; font-weight: 700;
+      color: #521506; letter-spacing: 2px;
+    }
+    .red-line { height: 3px; background: var(--red); width: 100%; }
+
+    /* ── 封面 ── */
+    .cover {
+      background: #521506; color: #fff;
+      padding: 0;
+      position: relative; overflow: hidden;
+    }
+    .cover-hero {
+      padding: 80px 52px 72px;
+      position: relative;
+    }
+    .cover-hero::after {
+      content: ''; position: absolute;
+      right: -80px; bottom: -80px;
+      width: 360px; height: 360px;
+      border: none; border-radius: 50%; pointer-events: none;
+      background: conic-gradient(
+        from 0deg,
+        rgba(255,255,255,0.40) 0%,
+        rgba(255,255,255,0.03) 35%,
+        rgba(255,255,255,0.28) 55%,
+        rgba(255,255,255,0.02) 80%,
+        rgba(255,255,255,0.40) 100%
+      );
+      -webkit-mask: radial-gradient(circle, transparent 55%, #000 56%, #000 100%);
+      mask: radial-gradient(circle, transparent 55%, #000 56%, #000 100%);
+      animation: ring-spin 18s linear infinite;
+    }
+    .cover-hero::before {
+      content: ''; position: absolute;
+      right: 80px; top: -40px;
+      width: 180px; height: 180px;
+      border: none; border-radius: 50%; pointer-events: none;
+      background: conic-gradient(
+        from 120deg,
+        rgba(255,255,255,0.35) 0%,
+        rgba(255,255,255,0.02) 30%,
+        rgba(255,255,255,0.22) 60%,
+        rgba(255,255,255,0.01) 85%,
+        rgba(255,255,255,0.35) 100%
+      );
+      -webkit-mask: radial-gradient(circle, transparent 50%, #000 52%, #000 100%);
+      mask: radial-gradient(circle, transparent 50%, #000 52%, #000 100%);
+      animation: ring-spin 12s linear infinite reverse;
+    }
+    @keyframes ring-spin {
+      to { transform: rotate(360deg); }
+    }
+    .cover-bottom {
+      background: var(--bg-warm); color: #3D3935;
+      padding: 32px 52px 36px;
+      position: relative;
+    }
+    .cover-bottom::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      height: 2px;
+      width: 100%;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: line-expand 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+    }
+    @keyframes line-expand {
+      to { transform: scaleX(1); }
+    }
+    .cover-eyebrow {
+      font-size: 12px; letter-spacing: 5px;
+      text-transform: uppercase;
+      font-weight: 700; margin-bottom: 18px;
+      background: linear-gradient(90deg,
+        rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 40%,
+        rgba(255,255,255,1) 50%,
+        rgba(255,255,255,0.7) 60%, rgba(255,255,255,0.7) 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%, 100% { background-position: 100% 0; }
+      50% { background-position: -100% 0; }
+    }
+    .cover-title {
+      font-size: 34px; font-weight: 700;
+      letter-spacing: 6px; line-height: 1.3;
+      margin-bottom: 8px; color: #fff;
+    }
+    .cover-subtitle {
+      font-size: 13px; color: rgba(255,255,255,0.6);
+      letter-spacing: 1.5px; margin-bottom: 0;
+    }
+    .cover-meta { display: flex; gap: 40px; flex-wrap: wrap; justify-content: flex-end; }
+    .cover-meta-item {
+      position: relative;
+      padding-left: 20px;
+    }
+    .cover-meta-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 2px; bottom: 2px;
+      width: 1px;
+      background: var(--border);
+    }
+    .cover-meta-item:first-child { padding-left: 0; }
+    .cover-meta-item:first-child::before { display: none; }
+    .cover-meta-item label {
+      display: block; font-size: 11px; letter-spacing: 3px;
+      color: var(--warm-gray); text-transform: uppercase;
+      margin-bottom: 6px; font-weight: 600;
+    }
+    .cover-meta-item span {
+      font-size: 16px; font-weight: 600;
+      letter-spacing: 1px; color: #3D3935;
+    }
+    /* ── Section 通用 ── */
+    section {
+      padding: 56px 52px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border-light);
+    }
+    section:last-of-type { border-bottom: none; padding-bottom: 72px; }
+    section:nth-of-type(even) { background: var(--bg-warm); }
+    .section-head { margin-bottom: 36px; }
+    .section-eyebrow {
+      font-size: 10px; letter-spacing: 3px;
+      color: var(--red); text-transform: uppercase;
+      font-weight: 600; margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 24px; font-weight: 700;
+      color: var(--dark); letter-spacing: 3px;
+    }
+    .section-rule { width: 40px; height: 2.5px; background: var(--gold); margin-top: 10px; }
+    /* ── S01 市場概況 ── */
+    .market-lead {
+      font-size: 15px; line-height: 1.9;
+      color: var(--dark);
+      background: var(--bg-warm);
+      border-left: 3px solid var(--red);
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      letter-spacing: 0.3px;
+    }
+    .market-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      background: transparent;
+      border: none;
+      margin-bottom: 20px;
+    }
+    .stat-item {
+      background: #fff;
+      padding: 28px 24px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .stat-item:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .stat-label {
+      font-size: 16px; letter-spacing: 2px;
+      color: var(--gold); text-transform: uppercase;
+      font-weight: 700; margin-bottom: 10px;
+    }
+    .stat-val {
+      font-size: 48px; font-weight: 700;
+      color: var(--red); letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    .stat-note { font-size: 13px; color: var(--warm-gray); margin-top: 4px; }
+    .market-note {
+      font-size: 13px; color: var(--warm-gray);
+      padding: 12px 16px;
+      background: var(--bg-section);
+      border-left: 2px solid var(--gold);
+      line-height: 1.7;
+    }
+
+    /* ── S02 物件價值診斷 ── */
+    .diag-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 15px; margin-bottom: 20px;
+    }
+    .diag-table th {
+      background: #fff;
+      color: var(--dark);
+      font-size: 13px; letter-spacing: 1px;
+      padding: 12px 16px; text-align: left;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .diag-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--dark); vertical-align: top;
+      line-height: 1.7;
+    }
+    .diag-table tr:last-child td { border-bottom: none; }
+    .diag-table td:first-child {
+      color: var(--warm-gray); font-size: 14px;
+      white-space: nowrap; width: 100px; font-weight: 600;
+    }
+    .swot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      background: transparent;
+      border: none;
+    }
+    .swot-cell {
+      padding: 28px 28px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .swot-cell:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .swot-label {
+      font-size: 16px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+    }
+    .swot-label.s { color: var(--gold); border-bottom: 2px solid var(--gold); }
+    .swot-label.w { color: var(--red); border-bottom: 2px solid var(--red); }
+    .swot-label.o { color: #4a9; border-bottom: 2px solid #4a9; }
+    .swot-label.t { color: var(--warm-gray); border-bottom: 2px solid var(--warm-gray); }
+    .swot-item {
+      font-size: 14px; color: var(--dark);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border-light);
+      line-height: 1.6;
+    }
+    .swot-item:last-child { border-bottom: none; }
+
+    /* ── S03 行銷方案 ── */
+
+    /* 行銷武器庫 */
+    .arsenal-intro {
+      font-size: 15px; color: var(--warm-gray);
+      margin-bottom: 28px; line-height: 1.7;
+    }
+    .arsenal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 36px;
+    }
+    .arsenal-item {
+      background: #fff;
+      padding: 24px 16px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .arsenal-item:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .arsenal-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .arsenal-name {
+      font-size: 14px; font-weight: 700;
+      color: var(--dark);
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    .arsenal-desc {
+      font-size: 12px; color: var(--warm-gray);
+      line-height: 1.5;
+    }
+
+    /* Demo 文案卡片（卡片風格） */
+    .demo-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      overflow: hidden;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .demo-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .demo-card-head {
+      background: linear-gradient(135deg, #521506 0%, #7a3a28 100%);
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 10px 10px 0 0;
+    }
+    .demo-type {
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+    }
+    .demo-channel {
+      font-size: 12px; color: var(--gold);
+      font-weight: 600; letter-spacing: 0.5px;
+    }
+    .demo-body { padding: 8px 28px 28px; }
+    .demo-title {
+      font-size: 17px; font-weight: 700;
+      color: var(--dark); margin-bottom: 10px;
+      letter-spacing: 0.5px; line-height: 1.4;
+    }
+    .demo-copy {
+      font-size: 15px; color: var(--warm-gray);
+      line-height: 1.8;
+    }
+    .demo-highlight {
+      font-size: 14px; color: #521506;
+      font-weight: 600; margin-top: 12px;
+      padding: 10px 16px;
+      background: rgba(82,21,6,0.04);
+      border-left: 3px solid #521506;
+      line-height: 1.6;
+    }
+    .demo-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .demo-tag {
+      font-size: 12px; color: #521506;
+      padding: 4px 12px;
+      border: 1px solid rgba(82,21,6,0.2);
+      border-radius: 2px;
+      background: rgba(82,21,6,0.03);
+      letter-spacing: 0.5px;
+    }
+    .demo-cards-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* ── S04 定價策略 ── */
+    .price-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .price-card {
+      padding: 28px 28px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
+      border: 1px solid var(--border-light);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .price-card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .price-card.recommended {
+      border: 2px solid var(--red);
+      background: #fffbfb;
+    }
+    .price-card-label {
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+    }
+    .price-card-label.rec { color: var(--red); border-bottom: 2px solid var(--red); }
+    .price-card-label.ref { color: var(--warm-gray); border-bottom: 2px solid var(--warm-gray); }
+    .price-card .price-name {
+      font-size: 13px; color: var(--warm-gray);
+      margin-bottom: 12px; letter-spacing: 1px;
+    }
+    .price-card .price-value {
+      font-size: 32px; font-weight: 700;
+      margin-bottom: 6px; line-height: 1.2;
+    }
+    .price-card.recommended .price-value { color: var(--red); }
+    .price-card .price-value { color: var(--dark); }
+    .price-card .price-est {
+      font-size: 14px; color: var(--warm-gray);
+      margin-bottom: 16px;
+    }
+    .price-card .price-logic {
+      font-size: 14px; color: var(--dark);
+      line-height: 1.7;
+    }
+    .price-badge {
+      display: inline-block;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 2px;
+      margin-bottom: 8px;
+    }
+    .price-badge.rec { background: var(--red); color: #fff; }
+    .price-badge.ref { background: var(--bg-section); color: var(--warm-gray); border: 1px solid var(--border); }
+
+    /* ── S05 為什麼選我們 ── */
+    .why-us-items { display: flex; flex-direction: column; gap: 1px; background: var(--border-light); border: 1px solid var(--border-light); }
+    .why-item {
+      background: var(--bg);
+      padding: 22px 24px;
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+    .why-item:nth-child(even) { background: var(--bg-warm); }
+    .why-num {
+      flex-shrink: 0;
+      font-size: 28px; font-weight: 700;
+      color: rgba(200,16,46,0.12);
+      line-height: 1; margin-top: 2px;
+      letter-spacing: -1px;
+    }
+    .why-body .w-title {
+      font-size: 15px; font-weight: 600;
+      color: var(--dark); margin-bottom: 4px;
+      letter-spacing: 0.3px;
+    }
+    .why-body .w-desc {
+      font-size: 14px; color: var(--warm-gray); line-height: 1.7;
+    }
+    .why-close {
+      margin-top: 32px;
+      font-size: 16px; line-height: 1.9;
+      color: var(--dark);
+      background: var(--bg-warm);
+      border-left: 3px solid var(--gold);
+      padding: 20px 24px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── 頁尾 ── */
+    .footer-img { width: 100%; display: block; }
+    .footer-contact {
+      background: var(--bg);
+      color: #3D3935;
+      padding: 20px 52px 18px;
+      font-size: 13px; letter-spacing: 0.3px; line-height: 1.9;
+      border-top: 1px solid var(--border-light);
+    }
+    .footer-contact .agent-row {
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap;
+      gap: 6px; margin-bottom: 10px;
+    }
+    .footer-contact strong { color: var(--red); font-weight: 700; }
+    .footer-contact .divider {
+      border: none; border-top: 1px solid rgba(61,57,53,0.2); margin: 10px 0;
+    }
+    .footer-contact .disclosure {
+      color: rgba(61,57,53,0.55);
+      font-size: 10px; letter-spacing: 0.4px;
+      line-height: 2; display: flex; gap: 32px; flex-wrap: wrap;
+    }
+    .footer-contact .disc-col { display: flex; flex-direction: column; }
+    .footer-contact .copy { font-size: 10px; letter-spacing: 0.5px; }
+
+    /* ── 目次導航 ── */
+    .toc {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 10px 52px;
+      display: flex; gap: 10px; flex-wrap: wrap;
+      font-size: 14px;
+    }
+    .toc a {
+      color: var(--warm-gray); text-decoration: none;
+      padding: 8px 18px; border-radius: 6px;
+      letter-spacing: 0.5px; white-space: nowrap;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+      border: 1px solid var(--border-light);
+      transition: all 0.2s;
+    }
+    .toc a:hover { background: var(--bg-section); color: var(--dark); box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+
+    @page { size: A4; margin: 15mm 12mm; }
+    @media print {
+      body { background: #fff; }
+      .page { max-width: 100%; box-shadow: none; padding: 0; }
+      .toc { display: none; }
+      .cover { page-break-after: always; }
+      section { page-break-inside: avoid; page-break-before: auto; }
+      .section-head, .swot-grid, .swot-cell,
+      .price-grid, .price-card, .demo-card, .arsenal-grid {
+        break-inside: avoid;
+      }
+      .footer { page-break-before: auto; }
+    }
+    @media (max-width: 600px) {
+      .page { max-width: 100%; box-shadow: none; }
+      .header, section { padding: 28px 20px; }
+      .cover { padding: 40px 20px; }
+      .cover-title { font-size: 26px; letter-spacing: 3px; }
+      .cover-meta { gap: 20px; justify-content: flex-start; flex-direction: column; }
+      .cover-meta-item { padding-left: 0; }
+      .cover-meta-item::before { display: none; }
+      .toc { padding: 8px 16px; gap: 4px; }
+      .toc a { font-size: 10px; padding: 3px 8px; }
+      .market-stats { grid-template-columns: 1fr; }
+      .swot-grid { grid-template-columns: 1fr; }
+      .arsenal-grid { grid-template-columns: repeat(2, 1fr); }
+      .demo-cards-row { grid-template-columns: 1fr; }
+      .price-grid { grid-template-columns: 1fr; }
+      .diag-table { font-size: 13px; }
+      .footer-contact { padding: 16px 20px; }
+      .footer-contact .agent-row { flex-direction: column; align-items: flex-start; }
+      .footer-cols { flex-direction: column; gap: 12px; }
+      .footer-contact .disclosure { flex-direction: column; gap: 8px; font-size: 9px; }
+      .footer-contact .copy { font-size: 9px; }
+      .footer-contact .agent-row div { font-size: 12px; }
+    }
+
+    /* ── 滾動淡入動畫 ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-child > * {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal-child.revealed > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-child.revealed > *:nth-child(1) { transition-delay: 0s; }
+    .reveal-child.revealed > *:nth-child(2) { transition-delay: 0.08s; }
+    .reveal-child.revealed > *:nth-child(3) { transition-delay: 0.16s; }
+    .reveal-child.revealed > *:nth-child(4) { transition-delay: 0.24s; }
+    .reveal-child.revealed > *:nth-child(5) { transition-delay: 0.32s; }
+    .reveal-child.revealed > *:nth-child(6) { transition-delay: 0.4s; }
+    @media print {
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .reveal-child > * { opacity: 1 !important; transform: none !important; }
+      .cover-hero::after, .cover-hero::before { animation: none !important; }
+      .cover-eyebrow { animation: none !important; -webkit-text-fill-color: rgba(255,255,255,0.7) !important; background: none !important; }
+      .cover-bottom::before { animation: none !important; transform: scaleX(1) !important; }
+    }
+    /* ── 授權閘門 ── */
+    .auth-gate {
+      position: fixed; inset: 0; z-index: 9999;
+      background: #fff;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    .auth-gate.unlocked {
+      opacity: 0; visibility: hidden; pointer-events: none;
+    }
+    .auth-gate .auth-logo { height: 48px; margin-bottom: 64px; }
+    .auth-gate .auth-box { text-align: center; }
+    .auth-gate .auth-label {
+      font-size: 13px; color: var(--warm-gray);
+      letter-spacing: 2px; margin-bottom: 28px;
+    }
+    .auth-gate .auth-inputs {
+      display: flex; gap: 12px; justify-content: center; margin-bottom: 28px;
+    }
+    .auth-gate .auth-inputs input {
+      width: 52px; height: 60px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      font-size: 24px; font-weight: 700;
+      text-align: center;
+      color: var(--dark);
+      outline: none;
+      transition: border-color 0.2s;
+      font-family: inherit;
+    }
+    .auth-gate .auth-inputs input:focus {
+      border-color: var(--gold);
+    }
+    .auth-gate .auth-inputs input.error {
+      border-color: var(--red);
+      animation: auth-shake 0.4s ease;
+    }
+    .auth-gate .auth-hint {
+      font-size: 11px; color: var(--border);
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+    .auth-gate .auth-hint.error { color: var(--red); }
+    @keyframes auth-shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-6px); }
+      40%, 80% { transform: translateX(6px); }
+    }
+    @media print { .auth-gate { display: none !important; } }
+  </style>
+</head>
+<body>
+
+<!-- 授權閘門 -->
+<div class="auth-gate" id="authGate">
+  <img class="auth-logo" src="../永慶CIS/店名Logo_永慶不動產_溪洲店.png" alt="永慶不動產 溪洲店" />
+  <div class="auth-box">
+    <div class="auth-label">請輸入授權碼</div>
+    <div class="auth-inputs" id="authInputs">
+      <input type="tel" maxlength="1" inputmode="numeric" autocomplete="off" />
+      <input type="tel" maxlength="1" inputmode="numeric" autocomplete="off" />
+      <input type="tel" maxlength="1" inputmode="numeric" autocomplete="off" />
+      <input type="tel" maxlength="1" inputmode="numeric" autocomplete="off" />
+    </div>
+    <div class="auth-hint" id="authHint">專屬服務文件</div>
+  </div>
+</div>
+<div class="page">
+
+  <!-- 頁眉 -->
+  <header class="header">
+    <div class="logo-wrap">
+      <img src="../永慶CIS/店名Logo_永慶不動產_溪洲店.png" alt="永慶不動產 溪洲店" />
+    </div>
+    <div class="header-right">
+      <div class="doc-eyebrow">PROFESSIONAL SERVICE</div>
+      <div class="doc-title">銷售報告書</div>
+    </div>
+  </header>
+  <div class="red-line"></div>
+
+  <!-- 封面 -->
+  <div class="cover">
+    <div class="cover-hero">
+      <div class="cover-eyebrow">SALES REPORT</div>
+      <div class="cover-title">銷售報告書</div>
+      <div class="cover-subtitle">專業定位・精準行銷・為您的物件找到最適買方</div>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-meta">
+        <div class="cover-meta-item"><label>物件地址</label><span>樹林區 XX 路 XXX 號 X 樓</span></div>
+        <div class="cover-meta-item"><label>建議日期</label><span>2026 年 4 月</span></div>
+        <div class="cover-meta-item"><label>服務仲介</label><span>胡志宇　店長</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 目次導航 -->
+  <nav class="toc">
+    <a href="#s1">市場概況</a>
+    <a href="#s2">物件價值診斷</a>
+    <a href="#s3">行銷方案</a>
+    <a href="#s4">定價策略</a>
+    <a href="#s5">為什麼選我們</a>
+  </nav>
+
+  <!-- SECTION 01 — 市場概況 -->
+  <section id="s1">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 01</div>
+      <div class="section-title">市場概況</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="market-lead">
+      根據近三個月樹林區實價登錄數據，本區域同類型物件（3 房，30–45 坪）成交均價約 <strong>每坪 28–32 萬元</strong>，市場供給量略增，帶看轉成交周期拉長至約 <strong>45–60 天</strong>。現階段屬於買方市場過渡期——定價精準的物件仍能在 30 天內成交，定價偏高者則面臨滯銷壓力。
+    </div>
+    <div class="market-stats reveal-child">
+      <div class="stat-item">
+        <div class="stat-label">近三月成交均價</div>
+        <div class="stat-val">29.5</div>
+        <div class="stat-note">萬元 / 坪（同類型）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">平均成交天數</div>
+        <div class="stat-val">52</div>
+        <div class="stat-note">天（上季 38 天）</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">同期競品數量</div>
+        <div class="stat-val">14</div>
+        <div class="stat-note">間在售（同區 3 房）</div>
+      </div>
+    </div>
+    <div class="market-note">
+      ＊ 數據來源：內政部實價登錄、591 房屋交易網。以上數據為範本示意，實際執行時請替換為最新查詢結果。
+    </div>
+  </section>
+
+  <!-- SECTION 02 — 物件價值診斷 -->
+  <section id="s2">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 02</div>
+      <div class="section-title">物件價值診斷</div>
+      <div class="section-rule"></div>
+    </div>
+    <table class="diag-table" style="margin-bottom:28px">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>內容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>隱性價值</td>
+          <td>鄰近捷運站步行 8 分鐘，三鶯線通車後預期增值；社區管委會運作完善，公設維護優良；採光面向正南，全日自然採光充足</td>
+        </tr>
+        <tr>
+          <td>風險紅線</td>
+          <td>屋齡 18 年，管線可能需局部更新；公設比 32% 略高於區域均值；頂樓車位（無遮蔽）為潛在買方顧慮點</td>
+        </tr>
+        <tr>
+          <td>核心賣點</td>
+          <td>格局方正實用、生活機能成熟、社區管理完善——訴求首購成家族群，強調「現在可以入住的家」</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="swot-grid reveal-child">
+      <div class="swot-cell">
+        <div class="swot-label s">S 優勢</div>
+        <div class="swot-item">格局方正，空間利用率高</div>
+        <div class="swot-item">捷運效益明確，通勤族首選</div>
+        <div class="swot-item">社區管理優良，安全感強</div>
+      </div>
+      <div class="swot-cell">
+        <div class="swot-label w">W 劣勢</div>
+        <div class="swot-item">屋齡偏高，需誠實揭露管線狀況</div>
+        <div class="swot-item">公設比 32%，室內實坪感較低</div>
+        <div class="swot-item">頂樓車位為部分買方顧慮</div>
+      </div>
+      <div class="swot-cell">
+        <div class="swot-label o">O 機會</div>
+        <div class="swot-item">三鶯線通車預期帶動周邊增值</div>
+        <div class="swot-item">樹林區首購剛需持續穩健</div>
+        <div class="swot-item">同類競品定價偏高，相對具競爭力</div>
+      </div>
+      <div class="swot-cell">
+        <div class="swot-label t">T 威脅</div>
+        <div class="swot-item">市場供給量增加，帶看轉成交拉長</div>
+        <div class="swot-item">同社區另有 2 間在售，直接競爭</div>
+        <div class="swot-item">央行信用管制影響部分買方貸款成數</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03 — 行銷方案 DEMO -->
+  <section id="s3">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 03</div>
+      <div class="section-title">行銷方案 DEMO</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="arsenal-intro">
+      我們不只是刊登物件——我們為每一間房子打造完整的行銷系統。以下是我們為您準備的行銷武器庫，以及針對您物件量身規劃的文案示範。
+    </div>
+
+    <!-- 行銷武器庫 -->
+    <div class="arsenal-grid reveal-child">
+      <div class="arsenal-item">
+        <span class="arsenal-icon">📸</span>
+        <div class="arsenal-name">AI 場景渲染</div>
+        <div class="arsenal-desc">高解析環境模擬<br>預想未來的樣貌</div>
+      </div>
+      <div class="arsenal-item">
+        <span class="arsenal-icon">🔄</span>
+        <div class="arsenal-name">720° 環景導覽</div>
+        <div class="arsenal-desc">線上身歷其境<br>遠距看屋零門檻</div>
+      </div>
+      <div class="arsenal-item">
+        <span class="arsenal-icon">🎬</span>
+        <div class="arsenal-name">影片行銷</div>
+        <div class="arsenal-desc">YouTube 物件影片<br>建立情感連結</div>
+      </div>
+      <div class="arsenal-item">
+        <span class="arsenal-icon">📱</span>
+        <div class="arsenal-name">全平台曝光</div>
+        <div class="arsenal-desc">591 · 好房 · 樂屋<br>Facebook · LINE · IG</div>
+      </div>
+    </div>
+
+    <!-- 主打文案 DEMO -->
+    <div class="demo-card reveal">
+      <div class="demo-card-head">
+        <div class="demo-type">主打文案</div>
+        <div class="demo-channel">591 · 好房網 · 樂屋網</div>
+      </div>
+      <div class="demo-body">
+        <div class="demo-title">【樹林捷運宅】社區管理優 · 格局方正 · 成家首選</div>
+        <div class="demo-copy">
+          步行 8 分鐘抵達樹林站，未來三鶯線串聯雙北——交通這件事，一次到位。<br>
+          3 房 2 廳格局方正，空間不浪費，採光全天自然。社區管委會運作完善，鄰居素質整齊，這裡是真正能放心住的地方。<br>
+          屋況維護用心，隨時可入住。首購族、換屋族，這是您一直在等的那間。
+        </div>
+        <div class="demo-tags">
+          <span class="demo-tag">樹林捷運</span>
+          <span class="demo-tag">管理社區</span>
+          <span class="demo-tag">格局方正</span>
+          <span class="demo-tag">即可入住</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 雙欄：社群 + 影片 -->
+    <div class="demo-cards-row">
+      <div class="demo-card reveal">
+        <div class="demo-card-head">
+          <div class="demo-type">社群短文案</div>
+          <div class="demo-channel">Facebook · LINE</div>
+        </div>
+        <div class="demo-body">
+          <div class="demo-title">等了很久，終於等到這間</div>
+          <div class="demo-copy">
+            樹林捷運步行 8 分，3 房方正格局，社區管理超讚。<br>
+            屋況好、鄰居好、通勤好——三好物件不常有，有興趣的朋友歡迎私訊了解。
+          </div>
+          <div class="demo-tags">
+            <span class="demo-tag">樹林好宅</span>
+            <span class="demo-tag">首購推薦</span>
+          </div>
+        </div>
+      </div>
+      <div class="demo-card reveal">
+        <div class="demo-card-head">
+          <div class="demo-type">影片腳本</div>
+          <div class="demo-channel">YouTube · 社群</div>
+        </div>
+        <div class="demo-body">
+          <div class="demo-title">走進這個家｜樹林捷運 3 房開箱</div>
+          <div class="demo-copy">
+            開場：從捷運站步行實拍，展示通勤距離。<br>
+            中段：進入社區大廳 → 搭電梯 → 開門，三房格局一鏡到底。<br>
+            收尾：陽台窗景 + 社區公設巡禮。
+          </div>
+          <div class="demo-highlight">
+            影片讓買方「先住進去」，到場看屋的決策速度提升 3 倍。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 720° 環景 + 場景渲染 -->
+    <div class="demo-cards-row">
+      <div class="demo-card reveal">
+        <div class="demo-card-head">
+          <div class="demo-type">720° 環景導覽</div>
+          <div class="demo-channel">官網 · LINE 分享</div>
+        </div>
+        <div class="demo-body">
+          <div class="demo-title">線上看屋，身歷其境</div>
+          <div class="demo-copy">
+            為您的物件製作互動式 720° 全景導覽，買方可在手機上自由旋轉視角，從客廳走到臥室、從廚房看向陽台——不出門就能感受空間尺度。
+          </div>
+          <div class="demo-highlight">
+            外縣市買方、海外華人客群的第一道篩選利器。有效減少無效帶看，提升到場買方的成交意願。
+          </div>
+        </div>
+      </div>
+      <div class="demo-card reveal">
+        <div class="demo-card-head">
+          <div class="demo-type">AI 場景渲染</div>
+          <div class="demo-channel">全平台通用</div>
+        </div>
+        <div class="demo-body">
+          <div class="demo-title">預想未來的家</div>
+          <div class="demo-copy">
+            運用 AI 技術將空屋或舊裝潢渲染成現代風格的居家場景——買方不再看空蕩蕩的房間，而是看到「搬進去之後的樣子」。
+          </div>
+          <div class="demo-highlight">
+            實測數據：有場景渲染的物件，線上詢問度平均提升 40%，看屋預約率提升 25%。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04 — 定價策略 -->
+  <section id="s4">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 04</div>
+      <div class="section-title">定價策略</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="price-grid reveal-child">
+      <div class="price-card recommended">
+        <span class="price-badge rec">★ 建議</span>
+        <div class="price-card-label rec">獲勝價格</div>
+        <div class="price-name">建議開價</div>
+        <div class="price-value">1,080 萬</div>
+        <div class="price-est">推估成交價：1,020–1,050 萬</div>
+        <div class="price-logic">低於競品均價 5–8%，快速觸發買方興趣。目標 30 天內成交，避免進入滯銷週期。</div>
+      </div>
+      <div class="price-card">
+        <span class="price-badge ref">參考</span>
+        <div class="price-card-label ref">陪榜價格</div>
+        <div class="price-name">建議開價</div>
+        <div class="price-value">1,150 萬</div>
+        <div class="price-est">推估成交價：1,050–1,100 萬</div>
+        <div class="price-logic">市場均值開價，等待精準買方。預估成交周期 60–90 天，需耐心等待。</div>
+      </div>
+    </div>
+    <div class="market-note">
+      ＊ 「獲勝價格」邏輯：現在少要求 70 萬，可以避免 3 個月後因滯銷被迫降 150 萬的風險。時間也是成本。
+    </div>
+  </section>
+
+  <!-- SECTION 05 — 為什麼選我們 -->
+  <section id="s5" style="padding-top:72px">
+    <div class="section-head">
+      <div class="section-eyebrow">SECTION 05</div>
+      <div class="section-title">為什麼選我們</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="why-us-items">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-body">
+          <div class="w-title">在地深耕，市場最懂</div>
+          <div class="w-desc">扎根樹林溪洲超過 23 年、累積成交超過 5,000 件，對本區每條街的成交行情、買方偏好、學區資訊瞭如指掌。我們不是說說而已——我們是真的住在這裡、賣在這裡的人。</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-body">
+          <div class="w-title">精準文案，觸達對的買方</div>
+          <div class="w-desc">如上方 DEMO 所示，我們針對每間物件量身撰寫行銷文案，而不是複製貼上模板。對的文案，找來的是願意出正確價格的買方。</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-body">
+          <div class="w-title">透明回報，全程掌握</div>
+          <div class="w-desc">委託後每週主動回報來電量、帶看量、買方反饋。好消息告訴您，壞消息也告訴您——因為提早知道才能提早調整。</div>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-body">
+          <div class="w-title">永慶品牌，資源最廣</div>
+          <div class="w-desc">永慶不動產全台超過 6,000 位經紀人，全系統協尋買方。在地服務加上全國資源，您的物件曝光最大化。</div>
+        </div>
+      </div>
+    </div>
+    <div class="why-close">
+      我們的目標很簡單：在最適合的時機，以最接近市場合理值的價格，讓您的物件找到最適合的主人。
+      如果您願意給我們一個機會，我們願意用結果說話。
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer>
+    <div class="red-line"></div>
+    <img src="../永慶CIS/頁尾_房仲第一品牌.png" alt="永慶不動產 房仲第一品牌" class="footer-img" />
+    <div class="footer-contact">
+      <div class="agent-row">
+        <div>
+          服務仲介：<strong>胡志宇　店長</strong>　｜
+          電話：<strong>02-86872233</strong>　｜
+          E-mail：a86872233@gmail.com
+        </div>
+        <div class="copy">© 2026 永慶不動產 樹林溪洲加盟店　｜　本文件為專屬服務文件，請勿轉發</div>
+      </div>
+      <hr class="divider" />
+      <div class="disclosure">
+        <div class="disc-col">
+          <div>地　址：新北市板橋區溪北路142號</div>
+          <div>電　話：02-86872233</div>
+          <div>傳　真：02-86873322</div>
+          <div>E-mail：a86872233@gmail.com</div>
+        </div>
+        <div class="disc-col">
+          <div>營業名稱：永慶不動產樹林溪洲加盟店</div>
+          <div>加盟證號：109鴻證字第0615號</div>
+          <div>營利事業登記名稱：明慶不動產有限公司</div>
+          <div>營利事業登記證號：北縣商聯乙字第09117085號</div>
+        </div>
+        <div class="disc-col">
+          <div>營利事業統一編號：80096409</div>
+          <div>北府地籍字第0910692409號</div>
+          <div>經紀人蕭寶華(91)北市經證字第00417號</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // ── 滾動淡入 ──
+  document.querySelectorAll('section, .cover-bottom, footer').forEach(el => {
+    el.classList.add('reveal');
+  });
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('revealed');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-child').forEach(el => revealObs.observe(el));
+
+  // ── 授權閘門 ──
+  (function() {
+    const gate = document.getElementById('authGate');
+    const inputs = gate.querySelectorAll('.auth-inputs input');
+    const hint = document.getElementById('authHint');
+
+    inputs.forEach((inp, i) => {
+      inp.addEventListener('input', function() {
+        this.value = this.value.replace(/\D/g, '').slice(0, 1);
+        if (this.value && i < inputs.length - 1) inputs[i + 1].focus();
+        if (i === inputs.length - 1 && this.value) checkCode();
+      });
+      inp.addEventListener('keydown', function(e) {
+        if (e.key === 'Backspace' && !this.value && i > 0) {
+          inputs[i - 1].focus();
+          inputs[i - 1].value = '';
+        }
+      });
+    });
+    inputs[0].focus();
+
+    function checkCode() {
+      const digits = Array.from(inputs).map(i => parseInt(i.value) || 0);
+      if (digits.some(d => isNaN(d)) || Array.from(inputs).some(i => !i.value)) return;
+      const sum = digits.reduce((a, b) => a + b, 0);
+      if (sum === 23) {
+        gate.classList.add('unlocked');
+      } else {
+        inputs.forEach(i => i.classList.add('error'));
+        hint.textContent = '授權碼錯誤';
+        hint.classList.add('error');
+        setTimeout(() => {
+          inputs.forEach(i => { i.classList.remove('error'); i.value = ''; });
+          hint.textContent = '專屬服務文件';
+          hint.classList.remove('error');
+          inputs[0].focus();
+        }, 800);
+      }
+    }
+  })();
+</script>
+</body>
+</html>
