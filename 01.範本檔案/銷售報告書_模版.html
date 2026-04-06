@@ -560,14 +560,15 @@
     }
     @media (max-width: 600px) {
       .page { max-width: 100%; box-shadow: none; }
-      .header, section { padding: 28px 20px; }
+      .header, .red-line { display: none; }
+      section { padding: 28px 20px; }
       .cover { padding: 40px 20px; }
       .cover-title { font-size: 26px; letter-spacing: 3px; }
       .cover-meta { gap: 20px; justify-content: flex-start; flex-direction: column; }
       .cover-meta-item { padding-left: 0; }
       .cover-meta-item::before { display: none; }
-      .toc { padding: 8px 16px; gap: 4px; }
-      .toc a { font-size: 10px; padding: 3px 8px; }
+      .toc { padding: 12px 16px; gap: 8px; flex-wrap: wrap; }
+      .toc a { font-size: 13px; padding: 8px 14px; }
       .market-stats { grid-template-columns: 1fr; }
       .swot-grid { grid-template-columns: 1fr; }
       .arsenal-grid { grid-template-columns: repeat(2, 1fr); }
