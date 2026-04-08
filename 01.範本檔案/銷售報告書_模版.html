@@ -4,33 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>銷售報告書｜永慶不動產 樹林溪洲店</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; scroll-behavior: smooth; }
     body {
-      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-      background: #f0eeeb;
-      color: #2c2c2c;
+      font-family: "Manrope", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: #F4F6F9;
+      color: #1A1C1E;
       line-height: 1.75;
     }
 
     :root {
-      --red:          #C8102E;
-      --dark:         #2c2c2c;
-      --warm-gray:    #6b6560;
-      --gold:         #b8936a;
+      --red:          #00234B;
+      --dark:         #1A1C1E;
+      --warm-gray:    #708090;
+      --gold:         #B8860B;
       --bg:           #ffffff;
-      --bg-warm:      #faf8f5;
-      --bg-section:   #f5f2ee;
-      --border:       #e2ddd8;
-      --border-light: #ede9e4;
+      --bg-warm:      #F7F9FB;
+      --bg-section:   #EDF0F4;
+      --border:       #CDD3DA;
+      --border-light: #E0E4EA;
     }
 
     .page {
       max-width: 860px;
       margin: 0 auto;
       background: var(--bg);
-      box-shadow: 0 4px 40px rgba(0,0,0,0.10);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.03);
       overflow: hidden;
     }
 
@@ -51,13 +54,13 @@
     }
     .header-right .doc-title {
       font-size: 14px; font-weight: 700;
-      color: #521506; letter-spacing: 2px;
+      color: #00234B; letter-spacing: 2px;
     }
     .red-line { height: 3px; background: var(--red); width: 100%; }
 
     /* ── 封面 ── */
     .cover {
-      background: #521506; color: #fff;
+      background: #00234B; color: #fff;
       padding: 0;
       position: relative; overflow: hidden;
     }
@@ -139,6 +142,7 @@
       50% { background-position: -100% 0; }
     }
     .cover-title {
+      font-family: "Noto Serif TC", serif;
       font-size: 34px; font-weight: 700;
       letter-spacing: 6px; line-height: 1.3;
       margin-bottom: 8px; color: #fff;
@@ -185,6 +189,7 @@
       font-weight: 600; margin-bottom: 6px;
     }
     .section-title {
+      font-family: "Noto Serif TC", serif;
       font-size: 24px; font-weight: 700;
       color: var(--dark); letter-spacing: 3px;
     }
@@ -212,13 +217,13 @@
       padding: 28px 24px;
       text-align: center;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
-      border: 1px solid var(--border-light);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid rgba(226, 221, 216, 0.4); border-top: 1px solid rgba(255, 255, 255, 1);
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .stat-item:hover {
-      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
-      transform: translateY(-2px);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.08), 0 6px 16px rgba(0,0,0,0.04);
+      transform: translateY(-4px);
     }
     .stat-label {
       font-size: 16px; letter-spacing: 2px;
@@ -274,13 +279,13 @@
       padding: 28px 28px;
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
-      border: 1px solid var(--border-light);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid rgba(226, 221, 216, 0.4); border-top: 1px solid rgba(255, 255, 255, 1);
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .swot-cell:hover {
-      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
-      transform: translateY(-2px);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.08), 0 6px 16px rgba(0,0,0,0.04);
+      transform: translateY(-4px);
     }
     .swot-label {
       font-size: 16px; font-weight: 700;
@@ -318,13 +323,13 @@
       padding: 24px 16px;
       text-align: center;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
-      border: 1px solid var(--border-light);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid rgba(226, 221, 216, 0.4); border-top: 1px solid rgba(255, 255, 255, 1);
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .arsenal-item:hover {
-      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
-      transform: translateY(-2px);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.08), 0 6px 16px rgba(0,0,0,0.04);
+      transform: translateY(-4px);
     }
     .arsenal-icon {
       font-size: 28px;
@@ -346,18 +351,18 @@
     .demo-card {
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
-      border: 1px solid var(--border-light);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid rgba(226, 221, 216, 0.4); border-top: 1px solid rgba(255, 255, 255, 1);
       overflow: hidden;
       margin-bottom: 20px;
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .demo-card:hover {
-      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
-      transform: translateY(-2px);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.08), 0 6px 16px rgba(0,0,0,0.04);
+      transform: translateY(-4px);
     }
     .demo-card-head {
-      background: linear-gradient(135deg, #521506 0%, #7a3a28 100%);
+      background: linear-gradient(135deg, #00234B 0%, #1A3A6A 100%);
       padding: 14px 28px;
       display: flex;
       align-items: center;
@@ -384,20 +389,20 @@
       line-height: 1.8;
     }
     .demo-highlight {
-      font-size: 14px; color: #521506;
+      font-size: 14px; color: var(--red);
       font-weight: 600; margin-top: 12px;
       padding: 10px 16px;
-      background: rgba(82,21,6,0.04);
-      border-left: 3px solid #521506;
+      background: rgba(0,35,75,0.04);
+      border-left: 3px solid var(--red);
       line-height: 1.6;
     }
     .demo-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
     .demo-tag {
-      font-size: 12px; color: #521506;
+      font-size: 12px; color: var(--red);
       padding: 4px 12px;
-      border: 1px solid rgba(82,21,6,0.2);
+      border: 1px solid rgba(0,35,75,0.18);
       border-radius: 2px;
-      background: rgba(82,21,6,0.03);
+      background: rgba(0,35,75,0.04);
       letter-spacing: 0.5px;
     }
     .demo-cards-row {
@@ -418,13 +423,13 @@
       padding: 28px 28px;
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07), 0 0.5px 3px rgba(0,0,0,0.04);
-      border: 1px solid var(--border-light);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid rgba(226, 221, 216, 0.4); border-top: 1px solid rgba(255, 255, 255, 1);
       transition: box-shadow 0.2s, transform 0.2s;
     }
     .price-card:hover {
-      box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
-      transform: translateY(-2px);
+      box-shadow: 0 24px 48px rgba(0,0,0,0.08), 0 6px 16px rgba(0,0,0,0.04);
+      transform: translateY(-4px);
     }
     .price-card.recommended {
       border: 2px solid var(--red);
@@ -467,7 +472,7 @@
     .price-badge.ref { background: var(--bg-section); color: var(--warm-gray); border: 1px solid var(--border); }
 
     /* ── S05 為什麼選我們 ── */
-    .why-us-items { display: flex; flex-direction: column; gap: 1px; background: var(--border-light); border: 1px solid var(--border-light); }
+    .why-us-items { display: flex; flex-direction: column; gap: 1px; background: var(--border-light); border: 1px solid rgba(226, 221, 216, 0.4); border-top: 1px solid rgba(255, 255, 255, 1); }
     .why-item {
       background: var(--bg);
       padding: 22px 24px;
@@ -540,7 +545,7 @@
       letter-spacing: 0.5px; white-space: nowrap;
       background: #fff;
       box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-      border: 1px solid var(--border-light);
+      border: 1px solid rgba(226, 221, 216, 0.4); border-top: 1px solid rgba(255, 255, 255, 1);
       transition: all 0.2s;
     }
     .toc a:hover { background: var(--bg-section); color: var(--dark); box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
@@ -563,7 +568,8 @@
       .header, .red-line { display: none; }
       section { padding: 28px 20px; }
       .cover { padding: 40px 20px; }
-      .cover-title { font-size: 26px; letter-spacing: 3px; }
+      .cover-title {
+      font-family: "Noto Serif TC", serif; font-size: 26px; letter-spacing: 3px; }
       .cover-meta { gap: 20px; justify-content: flex-start; flex-direction: column; }
       .cover-meta-item { padding-left: 0; }
       .cover-meta-item::before { display: none; }
@@ -673,7 +679,7 @@
 
 <!-- 授權閘門 -->
 <div class="auth-gate" id="authGate">
-  <img class="auth-logo" src="../永慶CIS/店名Logo_永慶不動產_溪洲店.png" alt="永慶不動產 溪洲店" />
+  <img class="auth-logo" src="../../07.好好說｜個人品牌CIS/永慶CIS/店名Logo_永慶不動產_溪洲店.png" alt="永慶不動產 溪洲店" />
   <div class="auth-box">
     <div class="auth-label">請輸入授權碼</div>
     <div class="auth-inputs" id="authInputs">
@@ -690,7 +696,7 @@
   <!-- 頁眉 -->
   <header class="header">
     <div class="logo-wrap">
-      <img src="../永慶CIS/店名Logo_永慶不動產_溪洲店.png" alt="永慶不動產 溪洲店" />
+      <img src="../../07.好好說｜個人品牌CIS/永慶CIS/店名Logo_永慶不動產_溪洲店.png" alt="永慶不動產 溪洲店" />
     </div>
     <div class="header-right">
       <div class="doc-eyebrow">PROFESSIONAL SERVICE</div>
@@ -1019,7 +1025,7 @@
   <!-- 頁尾 -->
   <footer>
     <div class="red-line"></div>
-    <img src="../永慶CIS/頁尾_房仲第一品牌.png" alt="永慶不動產 房仲第一品牌" class="footer-img" />
+    <img src="../../07.好好說｜個人品牌CIS/永慶CIS/頁尾_房仲第一品牌.png" alt="永慶不動產 房仲第一品牌" class="footer-img" />
     <div class="footer-contact">
       <div class="agent-row">
         <div>
