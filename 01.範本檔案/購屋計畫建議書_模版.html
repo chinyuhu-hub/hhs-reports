@@ -1489,6 +1489,7 @@
       const sum = digits.reduce((a, b) => a + b, 0);
       if (sum === 23) {
         gate.classList.add('unlocked');
+        window.scrollTo(0, 0);
       } else {
         inputs.forEach(i => i.classList.add('error'));
         hint.textContent = '授權碼錯誤';
