@@ -18,7 +18,7 @@
     }
 
     :root {
-      --red:          #00234B;
+      --red:          #8C1C32;
       --dark:         #1A1C1E;
       --warm-gray:    #708090;
       --gold:         #B8860B;
@@ -235,6 +235,9 @@
       color: var(--red); letter-spacing: -1px;
       line-height: 1.1;
     }
+    .stat-val.green { color: #2a9; }
+    .stat-val.gold { color: var(--gold); }
+    .stat-val.blue { color: #00234B; }
     .stat-note { font-size: 13px; color: var(--warm-gray); margin-top: 4px; }
     .market-note {
       font-size: 13px; color: var(--warm-gray);
@@ -743,12 +746,12 @@
     <div class="market-stats reveal-child">
       <div class="stat-item">
         <div class="stat-label">近三月成交均價</div>
-        <div class="stat-val">29.5</div>
+        <div class="stat-val blue">29.5</div>
         <div class="stat-note">萬元 / 坪（同類型）</div>
       </div>
       <div class="stat-item">
         <div class="stat-label">平均成交天數</div>
-        <div class="stat-val">52</div>
+        <div class="stat-val green">52</div>
         <div class="stat-note">天（上季 38 天）</div>
       </div>
       <div class="stat-item">
